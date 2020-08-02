@@ -1,0 +1,6 @@
+/* pages/shouye.wxss */
+.haibao{
+   width: 100%;
+   height: 333rpx;
+}
+.haibao image{width: 100%;height:333rpx;}

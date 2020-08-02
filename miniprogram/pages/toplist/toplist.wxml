@@ -1,0 +1,20 @@
+<!--pages/daxue/daxue.wxml-->
+<view class="searchbox">
+   <input placeholder="请输入学校的名称" bindinput="getInput" value="{{val}}">
+   </input>
+   <icon type="search" class="saarch2" wx:if="{{isSearch}}"> </icon>
+   <icon type="clear" class="clear2" wx:if="{{isClear}}" bindtap="clearTap"></icon>
+</view>
+
+<view class="tuijian">
+   <text class="tuijian2">热门学校推荐</text>
+   <image src="../../images/火焰.png" class="tuijian3"></image>
+</view>
+
+<sitem name="厦门大学" hot="2560.1"></sitem>
+<sitem name="武汉大学" hot="2560.1"></sitem>
+<sitem name="四川大学" hot="2560.1"></sitem>
+<sitem name="北京大学" hot="2560.1"></sitem>
+<sitem name="清华大学" hot="2560.1"></sitem>
+<sitem name="南京大学" hot="2560.1"></sitem>
+

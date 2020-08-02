@@ -1,0 +1,38 @@
+<!-- wx:if="{{canIUse == false}}" -->
+<view class="userbox">
+    <view class="usermsg">
+        <view wx:if="{{canIUse == true}}">
+            <image src="{{imgUrl}}" />
+            <text selectable="{{false}}">{{nickName}}</text>
+        </view>
+        <view wx:if="{{canIUse != true}}">
+            <image src="cloud://msgid.6d73-msgid-1259714111/icon/touxiang.png" />
+            <text selectable="{{false}}" style="color: #dcdde1">暂无信息</text>
+        </view>
+    </view>
+</view>
+<view class="userlist" >
+    <view class="list">
+        <view class="main" style="border-top: 5rpx dashed #dcdde1;">
+            <navigator url="">
+                <image src="cloud://msgid.6d73-msgid-1259714111/icon/yonghu.png" />
+                <text selectable="{{false}}">公司介绍</text>
+            </navigator>
+        </view>
+        <view class="main">
+            <navigator url="">
+                <image src="cloud://msgid.6d73-msgid-1259714111/icon/xinxi.png" />
+                <text selectable="{{false}}">人员分工</text>
+            </navigator>
+        </view>
+        <view class="main">
+            <navigator url="">
+                <image src="cloud://msgid.6d73-msgid-1259714111/icon/about.png" />
+                <text selectable="{{false}}">关于我们</text>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view class="end">
+    <text selectable="{{false}}">Copyright © 2020-2021 高考助手</text>
+</view>

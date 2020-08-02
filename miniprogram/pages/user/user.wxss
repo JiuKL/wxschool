@@ -1,0 +1,120 @@
+page{
+    height: 100%;
+}
+.userbox {
+    width: 100%;
+    height: 350rpx;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://6d73-msgid-1259714111.tcb.qcloud.la/imges/magazine-unlock-01-2.3.4042-_872525225E93CFA9510D.jpg?sign=1a8587037d0fa7363369c52418d05797&t=1587400227");
+    background-repeat: no-repeat;
+}
+
+.usermsg {
+    text-align: center;
+    height: 225rpx;
+    width: 175rpx;
+}
+
+.usermsg image {
+    width: 100%;
+    height: 175rpx;
+    border-radius: 50%;
+}
+
+button {
+    width: 80%;
+    height: 100rpx;
+    color: #fff;
+    background-color: #00a8ff;
+    border-radius: 98rpx;
+    position: absolute;
+    bottom: 60rpx;
+    margin-left: 95rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnimg {
+    display: flex;
+    position: relative;
+    padding-right: 10rpx;
+    width: 46rpx;
+    height: 46rpx;
+}
+
+button::after {
+    border-radius: 98rpx;
+    border: 0;
+}
+
+button:active .btnimg {
+    src: url('https://6d73-msgid-1259714111.tcb.qcloud.la/icon/weixin_black.png?sign=68df84404a752377e77a16bd7b80e6d5&t=1587400492');
+}
+
+.userlist {
+    width: 100%;
+    height: 55%;
+    border-radius: 50rpx;
+    background-color: #fff;
+    position: relative;
+    top: -40rpx;
+    border-top: 10rpx solid #00a8ff;
+    background-image:  url('https://6d73-msgid-1259714111.tcb.qcloud.la/icon/logo_opacity.png?sign=2034e0d613bba4d77a7c661accb81340&t=1587482467');
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+
+.list {
+    padding-top: 100rpx;
+    border-radius: 15rpx;
+    width: 100%;
+    height: 100rpx;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 80%;
+    height: 100rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 5rpx dashed #dcdde1;
+}
+
+.main image {
+    height: 55rpx;
+    width: 55rpx;
+}
+
+.main text {
+    padding-left: 20rpx;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    color: #212121;
+}
+.end{
+    width: 100%;
+    height: 75rpx;
+    position: absolute;
+    bottom: 10rpx;
+    text-align: center;
+}
+
+.end text{
+    font-size: xx-small;
+    text-align: center;
+    color: #bdc3c7;
+}

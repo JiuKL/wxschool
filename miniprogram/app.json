@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/toplist/toplist",
+    "pages/user/user",
+    "pages/main/main"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "高考助手",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "selectedColor": "#259EDE",
+    "list": [
+      {
+        "pagePath": "pages/main/main",
+        "text": "首页",
+        "iconPath": "images/main.png",
+        "selectedIconPath": "images/main_active.png"
+      },
+      {
+        "pagePath": "pages/toplist/toplist",
+        "text": "大学",
+        "iconPath": "images/list.png",
+        "selectedIconPath": "images/list_active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath":"images/user_active.png"
+      }
+    ]
+  }
+}

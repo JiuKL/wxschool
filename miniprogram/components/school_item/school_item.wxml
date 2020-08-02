@@ -1,0 +1,18 @@
+<view class="hengxian"></view>
+
+<view class="qinghua">
+  <image src="cloud://msgid.6d73-msgid-1259714111/s_icon/{{name}}.jpg" class="qinghuatu"></image>
+  <view>
+     <text class="qinghuaming">{{name}}</text>
+     <view class="biaoqian">
+        <text class="type">综合类</text>
+        <text class="type">985</text> 
+        <text class="type">211</text> 
+        <text class="type">双一流</text> 
+      </view>
+   </view> 
+   <view class="redu">
+      <text class="redu2">热度</text>
+      <text class="redu3">{{hot}}W</text>
+   </view>
+</view>
