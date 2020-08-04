@@ -1,20 +1,40 @@
-<!--pages/shouye.wxml-->
+<!-- pages/shouye.wxml -->
 <view class="haibao">
-   <swiper indicator-dots  indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff"
-      circular autoplay interval="4000">
-     <swiper-item><image src="../../images/list1.jpg"></image></swiper-item>
-     <swiper-item><image src="../../images/list2.jpg"></image></swiper-item>
-     <swiper-item><image src="../../images/list3.jpg"></image></swiper-item>
+   <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" circular autoplay interval="4000">
+      <swiper-item>
+         <image src="../../images/list1.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+         <image src="../../images/list2.jpg"></image>
+      </swiper-item>
+      <swiper-item>
+         <image src="../../images/list3.jpg"></image>
+      </swiper-item>
    </swiper>
-   <view class="find-main">
-      <view class="top">
-         <view class="top-left"></view>
-         <view class="top-right"></view>
+</view>
+<view class="find-main">
+   <view class="top">
+      <view class="top-left">
+         <view class="title">高考省份</view>
+         <image src="cloud://msgid.6d73-msgid-1259714111/icon/didian.png" />
+         <view class="title-msg">河北</view>
       </view>
-      <view class="mid">
-         <view class="mid-title"></view>
-         <input class="" type="number" placeholder="请输入分数"></input>
+      <view class="top-right">
+         <view class="title">科类</view>
+         <m-select name="理工" propArray="{{selectArray}}"></m-select>
       </view>
    </view>
+   <view class="mid">
+      <view class="mid-title">分数</view>
+      <view class="mid-score">
+         <input type="number" placeholder="请输入分数" placeholder-class="placeholder"></input>
+         <view class="icon">分</view>
+      </view>
+   </view>
+   <view class="end">
+      <a class="weui-btn weui-btn_primary">
+         <i class="weui-loading"></i>
+         智能筛选大学
+      </a>
+   </view>
 </view>
-

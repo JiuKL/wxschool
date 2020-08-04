@@ -1,0 +1,4 @@
+<view class="select">
+    <view class="top-txt">{{name}}</view>
+    <image class="top-img" src="/images/jiantoudown.png" />
+</view>

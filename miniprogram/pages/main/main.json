@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "m-select":"../../components/m_select/m_select"
+  }
 }

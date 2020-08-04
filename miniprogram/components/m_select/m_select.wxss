@@ -1,0 +1,17 @@
+.select{
+    width: 100rpx;
+    height: 50rpx;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-txt{
+    font-size: 25rpx;
+}
+
+.top-img{
+    width: 25rpx;
+    height: 25rpx;
+}
