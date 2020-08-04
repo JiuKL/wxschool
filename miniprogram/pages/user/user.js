@@ -1,4 +1,4 @@
-// pages/wode/wode.js
+
 Page({
 
   /**

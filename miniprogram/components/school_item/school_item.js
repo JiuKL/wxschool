@@ -11,8 +11,11 @@ Component({
     hot:{
       type: Number,
       value: ''
+    },
+    level:{
+      type: Array,
+      value: []
     }
-
   },
 
   /**

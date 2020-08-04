@@ -1,8 +1,13 @@
 {
   "pages": [
+    "pages/main/main",
     "pages/toplist/toplist",
+    "pages/school/index/index",
     "pages/user/user",
-    "pages/main/main"
+    "pages/school/class/class",
+    "pages/school/d_fir_class/d_fir_class",
+    "pages/school/s_about/s_about",
+    "pages/school/show/show"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -32,7 +37,7 @@
         "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "images/user.png",
-        "selectedIconPath":"images/user_active.png"
+        "selectedIconPath": "images/user_active.png"
       }
     ]
   }

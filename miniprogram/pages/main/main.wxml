@@ -6,5 +6,15 @@
      <swiper-item><image src="../../images/list2.jpg"></image></swiper-item>
      <swiper-item><image src="../../images/list3.jpg"></image></swiper-item>
    </swiper>
+   <view class="find-main">
+      <view class="top">
+         <view class="top-left"></view>
+         <view class="top-right"></view>
+      </view>
+      <view class="mid">
+         <view class="mid-title"></view>
+         <input class="" type="number" placeholder="请输入分数"></input>
+      </view>
+   </view>
 </view>
 

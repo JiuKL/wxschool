@@ -16,13 +16,13 @@
         <view class="main" style="border-top: 5rpx dashed #dcdde1;">
             <navigator url="">
                 <image src="cloud://msgid.6d73-msgid-1259714111/icon/yonghu.png" />
-                <text selectable="{{false}}">公司介绍</text>
+                <text selectable="{{false}}">XXXX</text>
             </navigator>
         </view>
         <view class="main">
             <navigator url="">
                 <image src="cloud://msgid.6d73-msgid-1259714111/icon/xinxi.png" />
-                <text selectable="{{false}}">人员分工</text>
+                <text selectable="{{false}}">XXX</text>
             </navigator>
         </view>
         <view class="main">

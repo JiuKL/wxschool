@@ -1,10 +1,26 @@
 /**app.wxss**/
 @import "style/weui.wxss";
 @import "font-awesome.wxss";
-page,view,image,text,swiper,swiper-item,navigator,scroll-view{
+page,view,image,text,swiper,swiper-item,navigator,scroll-view,icon{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 1981569 */
+  src: url('//at.alicdn.com/t/font_1981569_wqn0vz2a0vk.eot');
+  src: url('//at.alicdn.com/t/font_1981569_wqn0vz2a0vk.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1981569_wqn0vz2a0vk.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1981569_wqn0vz2a0vk.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1981569_wqn0vz2a0vk.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1981569_wqn0vz2a0vk.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family: "iconfont"!important;
+  font-size: 20px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 ::-webkit-scrollbar {
   display: none;

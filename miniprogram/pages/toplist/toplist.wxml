@@ -1,20 +1,29 @@
-<!--pages/daxue/daxue.wxml-->
+<!-- pages/daxue/daxue.wxml -->
+<view class="bkgcolor" style="background:{{bkgcolor}}"></view>
 <view class="searchbox">
-   <input placeholder="请输入学校的名称" bindinput="getInput" value="{{val}}">
-   </input>
-   <icon type="search" class="saarch2" wx:if="{{isSearch}}"> </icon>
-   <icon type="clear" class="clear2" wx:if="{{isClear}}" bindtap="clearTap"></icon>
+   <input placeholder="请输入学校的名称" bindinput="getInput" bindconfirm="openLoading" value="{{val}}"></input>
+   <icon type="search" class="findicon" bindtap="openLoading"></icon>
 </view>
-
 <view class="tuijian">
    <text class="tuijian2">热门学校推荐</text>
    <image src="../../images/火焰.png" class="tuijian3"></image>
 </view>
-
-<sitem name="厦门大学" hot="2560.1"></sitem>
-<sitem name="武汉大学" hot="2560.1"></sitem>
-<sitem name="四川大学" hot="2560.1"></sitem>
-<sitem name="北京大学" hot="2560.1"></sitem>
-<sitem name="清华大学" hot="2560.1"></sitem>
-<sitem name="南京大学" hot="2560.1"></sitem>
-
+<view class="main" wx:for="{{slist}}" wx:key="index">
+   <sitem data-id="{{item._id}}" data-index='{{index}}' name="{{item.name}}" data-hot="{{item.hot_list}}" hot="{{item.hot_list}}" level="{{item.level}}" bindtap="clickF"></sitem>
+</view>
+<!-- 警告框 -->
+<view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+   <view class="weui-mask_transparent"></view>
+   <view class="weui-toast">
+      <i class="weui-icon-info weui-icon_msg"></i>
+      <view class="weui-toast__content">{{eorror_msg}}</view>
+   </view>
+</view>
+<!-- 加载框 -->
+<view class="fadeIn {{hideLoading ? 'fadeOut' : ''}}" wx:if="{{loading}}">
+   <view class="weui-mask_transparent"></view>
+   <view class="weui-toast">
+      <i class="weui-loading weui-icon_toast"></i>
+      <view class="weui-toast__content">搜索中</view>
+   </view>
+</view>

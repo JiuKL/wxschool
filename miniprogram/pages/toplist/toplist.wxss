@@ -1,28 +1,31 @@
 /* pages/daxue/daxue.wxss */
-text,view,image{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box
+.bkgcolor{
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 }
 .searchbox{
   display: flex;
-  justify-content: center;
-  margin-left:37rpx; 
-  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin:10rpx 0 0 37rpx; 
   border-radius: 20px;
   width: 90%;
   height: 80rpx; 
-  align-items: center;
   background-color:#F2F2F2;
 }
 input{
   margin-left: 8px;
-  width: 300px;
+  width: 83%;
   font-size: 28rpx;
 }
-.saarch2{
+.findicon{
+  height: 100%;
+  width: 17%;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 .tuijian{
   display: flex;
@@ -35,7 +38,7 @@ input{
   color: #444444c4;
 }
 .tuijian3{
-  margin-left: 420rpx;
+  margin-left: 10rpx;
   height: 30rpx;
   width: 30rpx;
 }

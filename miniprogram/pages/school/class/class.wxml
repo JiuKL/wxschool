@@ -1,0 +1,110 @@
+<!--pages/kaishezhuanye/kaishezhuanye.wxml-->
+<view class="kai">
+  <view class="kaia">
+    <text class="kaia_1">经济学</text>
+    <text class="kaia_2">新闻学</text>
+    <text class="kaia_3">地质学</text>
+  </view>
+    <view class="kaib">
+    <text class="kaib_1">软件工程</text>
+    <text class="kaib_2">水文与水资源工程</text>
+  </view>
+    <view class="kaic">
+    <text class="kaic_1">哲学</text>
+    <text class="kaic_2">汉语言文学</text>
+    <text class="kaic_3">数学与应用数学</text>
+  </view>
+    <view class="kaid">
+    <text class="kaid_1">英语</text>
+    <text class="kaid_2">物理学</text>
+    <text class="kaid_3">大气科学</text>
+    </view>
+    <view class="kaie">
+    <text class="kaie_1">地质工程</text>
+    <text class="kaie_2">信息与计算科学</text>
+    <text class="kaie_3">广播电视学</text>
+  </view>
+    <view class="kaif">
+    <text class="kaif_1">电子信息科学与技术</text>
+    <text class="kaif_1">应用心理学</text>
+  </view>
+  <view class="kaig">
+    <text class="kaig_1">地球化学</text>
+    <text class="kaig_2">声学</text>
+    <text class="kaig_3">材料物理</text>
+  </view>
+  <view class="kaih">
+    <text class="kaih_1">材料化学</text>
+    <text class="kaih_2">环境科学</text>
+    <text class="kaih_3">统计学</text>
+  </view>
+  <view class="kaii">
+    <text class="kaii_1">自动化</text>
+    <text class="kaii_2">城乡规划</text>
+    <text class="kaii_3">化学</text>
+  </view>
+  <view class="kaij">
+    <text class="kaij_1">考古学</text>
+    <text class="kaij_2">国际金融与贸易</text>
+    <text class="kaij_3">金融学</text>
+  </view>
+  <view class="kaik">
+    <text class="kaik_1">社会工作</text>
+    <text class="kaik_2">国际政治</text>
+    <text class="kaik_3">广告学</text>
+  </view>
+  <view class="kail">
+    <text class="kail_1">政治学与行政学</text>
+    <text class="kail_2">环境工程</text>
+    <text class="kail_3">生物技术</text>
+  </view>
+  <view class="kaim">
+    <text class="kaim_1">会计学</text>
+    <text class="kaim_2">生物科学</text>
+    <text class="kaim_3">生物医学工程</text>
+  </view>
+  <view class="kain">
+    <text class="kain_1">工业工程</text>
+    <text class="kain_2">工商管理</text>
+    <text class="kain_3">市场营销</text>
+  </view>
+  <view class="kaio">
+    <text class="kaio_1">电子商务</text>
+    <text class="kaio_2">行政管理</text>
+    <text class="kaio_3">戏剧影视学</text>
+  </view>
+  <view class="kaip">
+    <text class="kaip_1">临床医学</text>
+    <text class="kaip_2">计算机科学与技术</text>
+  </view>
+  <view class="kaiq">
+    <text class="kaiq_1">天文学</text>
+    <text class="kaiq_2">历史学</text>
+    <text class="kaiq_3">西班牙语</text>
+  </view>
+  <view class="kair">
+    <text class="kair_1">法语</text>
+    <text class="kair_2">德语</text>
+    <text class="kair_3">俄语</text>
+  </view>
+  <view class="kais">
+    <text class="kais_1">汉语国际教育</text>
+    <text class="kais_2">日语</text>
+    <text class="kais_3">社会学</text>
+  </view>
+  <view class="kait">
+    <text class="kait_1">法学</text>
+    <text class="kait_2">生态学</text>
+    <text class="kait_3">应用气象学</text>
+  </view>
+  <view class="kaiu">
+    <text class="kaiu_1">金融工程</text>
+    <text class="kaiu_2">保险学</text>
+    <text class="kaiu_3">财务管理</text>
+  </view>
+  <view class="kaiv">
+    <text class="kaiv_1">通信工程</text>
+    <text class="kaiv_2">图书馆学</text>
+    <text class="kaiv_3">档案学</text>
+  </view>
+</view>
