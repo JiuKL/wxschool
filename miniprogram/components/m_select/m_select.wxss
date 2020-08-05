@@ -1,9 +1,8 @@
 .select{
-    width: 100rpx;
+    width: 130rpx;
     height: 50rpx;
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -14,4 +13,5 @@
 .top-img{
     width: 25rpx;
     height: 25rpx;
+    margin-left: 10rpx;
 }

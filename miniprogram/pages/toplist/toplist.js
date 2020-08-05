@@ -55,10 +55,8 @@ Page({
    * 警告弹窗
    */
   openToast: function () {
-    console.log("sadsd")
     this.setData({
       toast: true,
-      bkgcolor: "#b2bec3",
     });
     setTimeout(() => {
       this.setData({
@@ -68,7 +66,6 @@ Page({
         this.setData({
           toast: false,
           hideToast: false,
-          bkgcolor: "#fff"
         });
       }, 150);
     }, 1500);

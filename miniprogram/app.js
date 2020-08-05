@@ -16,5 +16,9 @@ App({
     }
 
     this.globalData = {}
+  },
+  userData:{
+    pl:'',
+    type:''
   }
 })

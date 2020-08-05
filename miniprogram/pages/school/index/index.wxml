@@ -28,75 +28,67 @@
           </text>
         </view>
         <view class="more">
-          <navigator class="kuangb_2" url="/pages/school/s_about/s_about" style="display:inline">
+          <navigator class="more-a" url="/pages/school/s_about/s_about" style="display:inline">
             查看更多
           </navigator>
         </view>
-        <view class="kuangc">
+        <view class="dian-numb">
           <text class="font-title">博士点</text>
           <text class="numb">{{school.boshidian}}</text>
           <text class="font-title">硕士点</text>
           <text class="numb">{{school.shuoshidian}}</text>
         </view>
-        <navigator class="div-mian" url="/pages/school/d_fir_class/d_fir_class">
-          <view class="d-class">
-            <text class="title iconfont icon-left">双一流学科</text>
-          </view>
-          <view class="d-class-msg">
-            <view class="l-msg" wx:if="{{school.D_first_class.length==0}}">
-              <text>暂无</text>
+        <view class="div-main">
+          <navigator url="/pages/school/d_fir_class/d_fir_class">
+            <view class="d-class">
+              <text class="title iconfont icon-left">双一流学科</text>
             </view>
-            <view class="l-msg" wx:if="{{school.D_first_class.length>0}}">
-              <text wx:if="{{school.D_first_class.length>0}}">{{school.D_first_class[0]}}</text>
-              <text wx:if="{{school.D_first_class.length>1}}">{{school.D_first_class[1]}}</text>
-              <text wx:if="{{school.D_first_class.length>2}}">{{school.D_first_class[2]}}</text>
-            </view>
-            <view class="l-msg" wx:if="{{school.D_first_class.length>0}}">
-              <text wx:if="{{school.D_first_class.length>3}}">{{school.D_first_class[3]}}</text>
-              <text wx:if="{{school.D_first_class.length>4}}">{{school.D_first_class[4]}}</text>
-              <text wx:if="{{school.D_first_class.length>5}}">{{school.D_first_class[5]}}</text>
-            </view>
-            <view class="l-msg" wx:if="{{school.D_first_class.length>0}}">
-              <text wx:if="{{school.D_first_class.length>6}}">{{school.D_first_class[6]}}</text>
-              <text wx:if="{{school.D_first_class.length>7}}">{{school.D_first_class[7]}}</text>
-              <text wx:if="{{school.D_first_class.length>8}}">{{school.D_first_class[8]}}</text>
-            </view>
-          </view>
-        </navigator>
-        <view class="div-main1">
-          <navigator class="div-mian" url="/pages/school/class/class">
-            <view class="d-class" style="background: linear-gradient(to bottom, #0984e3, #74b9ff);">
-              <text class="title iconfont icon-left">开设专业</text>
-            </view>
-            <view class="d-class-msg" style="background: linear-gradient(to right bottom, #0984e3, #74b9ff);">
-              <view class="l-msg" wx:if="{{school.open_class.length==0}}">
-                <text>暂无</text>
+            <view class="d-class-msg">
+              <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length==0}}">
+                <view class="weui-flex__item"><view class="placeholder">暂无</view></view>
               </view>
-              <view class="l-msg" wx:if="{{school.open_class.length>0}}">
-                <text wx:if="{{school.open_class.length>0}}">{{school.open_class[0]}}</text>
-                <text wx:if="{{school.open_class.length>1}}">{{school.open_class[1]}}</text>
-                <text wx:if="{{school.open_class.length>2}}">{{school.open_class[2]}}</text>
+              <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length>0}}">
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>0}}"><view class="placeholder">{{school.D_first_class[0]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>1}}"><view class="placeholder">{{school.D_first_class[1]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>2}}"><view class="placeholder">{{school.D_first_class[2]}}</view></view>
               </view>
-              <view class="l-msg" wx:if="{{school.open_class.length>0}}">
-                <text wx:if="{{school.open_class.length>3}}">{{school.open_class[3]}}</text>
-                <text wx:if="{{school.open_class.length>4}}">{{school.open_class[4]}}</text>
-                <text wx:if="{{school.open_class.length>5}}">{{school.open_class[5]}}</text>
+              <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length>3}}">
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>3}}"><view class="placeholder">{{school.D_first_class[3]}}</view></view>
               </view>
-              <view class="l-msg" wx:if="{{school.D_first_class.length>0}}">
-                <text wx:if="{{school.D_first_class.length>6}}">{{school.D_first_class[6]}}</text>
-                <text wx:if="{{school.D_first_class.length>7}}">{{school.D_first_class[7]}}</text>
-                <text wx:if="{{school.D_first_class.length>8}}">{{school.D_first_class[8]}}</text>
+              <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length>4}}">
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>4}}"><view class="placeholder">{{school.D_first_class[4]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>5}}"><view class="placeholder">{{school.D_first_class[5]}}</view></view>
               </view>
             </view>
           </navigator>
         </view>
-        <view class="div-main2">
-          <navigator url="/pages/school/show/show">
-            <view class="d-class" style="background: linear-gradient(to bottom, #00cec9, #81ecec);">
-              <text class="title iconfont icon-left">校园风光</text>
+        <view class="div-main">
+          <navigator class="div-mian" url="/pages/school/class/class">
+            <view class="d-class">
+              <text class="title iconfont icon-left">开设专业</text>
             </view>
-            <view class="xiaoyuan">
-              <image class="tupian" src=""></image>
+            <view class="d-class-msg">
+              <view class="weui-flex l-msg" wx:if="{{school.open_class.length==0}}">
+                <view class="weui-flex__item"><view class="placeholder">暂无</view></view>
+              </view>
+              <view class="weui-flex l-msg" wx:if="{{school.open_class.length>0}}">
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>0}}"><view class="placeholder">{{school.open_class[0]}}</view></view>
+              </view>
+              <view class="weui-flex l-msg" wx:if="{{school.open_class.length>1}}">
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>1}}"><view class="placeholder">{{school.open_class[1]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>2}}"><view class="placeholder">{{school.open_class[2]}}</view></view>
+              </view>
+              <view class="weui-flex l-msg" wx:if="{{school.open_class.length>3}}">
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>3}}"><view class="placeholder">{{school.open_class[3]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>4}}"><view class="placeholder">{{school.open_class[4]}}</view></view>
+              </view>
+            </view>
+          </navigator>
+        </view>
+        <view class="div-main">
+          <navigator url="/pages/school/show/show">
+            <view class="d-class">
+              <text class="title iconfont icon-left">校园风光</text>
             </view>
           </navigator>
         </view>

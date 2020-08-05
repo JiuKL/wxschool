@@ -13,28 +13,33 @@
    </swiper>
 </view>
 <view class="find-main">
-   <view class="top">
+   <view class="top" bindtap="chooseType">
       <view class="top-left">
          <view class="title">高考省份</view>
          <image src="cloud://msgid.6d73-msgid-1259714111/icon/didian.png" />
-         <view class="title-msg">河北</view>
+         <view class="title-msg">{{pl}}</view>
       </view>
       <view class="top-right">
          <view class="title">科类</view>
-         <m-select name="理工" propArray="{{selectArray}}"></m-select>
+         <m-select name="理工"></m-select>
       </view>
    </view>
    <view class="mid">
       <view class="mid-title">分数</view>
       <view class="mid-score">
-         <input type="number" placeholder="请输入分数" placeholder-class="placeholder"></input>
+         <input type="number" placeholder="{{searchValue}}" placeholder-class="placeholder" bindfocus="focusFn" bindblur="blurFn"></input>
          <view class="icon">分</view>
       </view>
    </view>
    <view class="end">
-      <a class="weui-btn weui-btn_primary">
-         <i class="weui-loading"></i>
-         智能筛选大学
-      </a>
+      <view class="button" hover-class="b_click">智能筛选大学</view>
+   </view>
+</view>
+<!-- 警告框 -->
+<view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+   <view class="weui-mask_transparent"></view>
+   <view class="weui-toast">
+      <i class="weui-icon-info weui-icon_msg"></i>
+      <view class="weui-toast__content">{{eorror_msg}}</view>
    </view>
 </view>

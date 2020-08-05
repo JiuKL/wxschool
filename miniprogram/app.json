@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/toplist/toplist",
+    "pages/main/user_type/user_type",
     "pages/school/index/index",
+    "pages/test/test",
+    "pages/toplist/toplist",
     "pages/user/user",
     "pages/school/class/class",
     "pages/school/d_fir_class/d_fir_class",
