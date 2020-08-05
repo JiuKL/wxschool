@@ -1,4 +1,4 @@
-<view class="nju">
+<view class="nju" wx:if="{{gallery!=true}}">
   <image class="icon" src="cloud://msgid.6d73-msgid-1259714111/s_icon/{{school.name}}.jpg"></image>
   <view class="msg">
     <view class="level">
@@ -9,7 +9,7 @@
     <view class="msg-item">所属地区：{{school.pl}}</view>
   </view>
 </view>
-<view class='topTabSwiper'>
+<view class='topTabSwiper' wx:if="{{gallery!=true}}">
   <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}' data-current="0" bindtap='checkCurrent'>
     简介
   </view>
@@ -33,8 +33,10 @@
           </navigator>
         </view>
         <view class="dian-numb">
+          <image class="boshidian" src="cloud://msgid.6d73-msgid-1259714111/icon/博士点.jpg" ></image>
           <text class="font-title">博士点</text>
           <text class="numb">{{school.boshidian}}</text>
+          <image class="shuoshidian" src="cloud://msgid.6d73-msgid-1259714111/icon/硕士点.jpg" ></image>
           <text class="font-title">硕士点</text>
           <text class="numb">{{school.shuoshidian}}</text>
         </view>
@@ -85,15 +87,13 @@
             </view>
           </navigator>
         </view>
-        <view class="div-main">
-          <navigator url="/pages/school/show/show">
-            <view class="d-class">
+        <view class="div-main" bindtap="open">
+            <view class="show-pic">
               <text class="title iconfont icon-left">校园风光</text>
             </view>
-          </navigator>
+            <image class="img"src="cloud://msgid.6d73-msgid-1259714111/show/{{school.name}}/{{school.name}}_pic4.jpg" />
         </view>
       </view>
-      <view id="end0"></view>
     </swiper-item>
     <swiper-item>
       <view class='swiper_con1'>welcome come to 录取</view>
@@ -102,4 +102,16 @@
       <view class='swiper_con2'>welcome come to 招生</view>
     </swiper-item>
   </swiper>
+</view>
+<view class="Page">
+    <swiper circular="{{true}}" class="swiper-main">
+        <swiper-item wx:for="{{pics}}" wx:key="index">
+            <view wx:if="{{gallery}}" class="weui-gallery fadeIn" bindtap="close">
+                <view class="weui-gallery__info">{{index+1}}/{{pics.length}}</view>
+                <view class="weui-gallery__img__wrp">
+                    <image mode="aspectFit" class="weui-gallery__img" src="{{item}}"></image>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
 </view>

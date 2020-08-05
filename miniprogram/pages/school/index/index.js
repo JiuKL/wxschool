@@ -10,7 +10,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-      currentData : 0,
+      gallery: false,//画廊
+      currentData : 0,//当前页面id
+      pics:[],
       school:{}
   },
   /**
@@ -22,16 +24,35 @@ Page({
     console.log("id："+id)
     db.collection('s_msg').where({
       _id:id
-      // _id:'aeb043d65f27bdb90028e29c6bb3ec24'
+      // _id:'aeb043d65f27bdb90028e2a2125d70f9'
     }).get({
       success: function(res){
         that.setData({
-          school:res.data[0]
+          school:res.data[0],
+          pics:[
+            'cloud://msgid.6d73-msgid-1259714111/show/'+res.data[0].name+'/'+res.data[0].name+'_pic1.jpg',
+            'cloud://msgid.6d73-msgid-1259714111/show/'+res.data[0].name+'/'+res.data[0].name+'_pic2.jpg',
+            'cloud://msgid.6d73-msgid-1259714111/show/'+res.data[0].name+'/'+res.data[0].name+'_pic3.jpg',
+            'cloud://msgid.6d73-msgid-1259714111/show/'+res.data[0].name+'/'+res.data[0].name+'_pic4.jpg'
+          ]
         })
         console.log(that.data.school)
       }
     })
     
+  },
+  /**
+   * 画廊开启，关闭
+  */
+  close: function () {
+    this.setData({
+      gallery: false,
+    });
+  },
+  open: function () {
+    this.setData({
+      gallery: true
+    });
   },
   //获取当前滑块的index
   bindchange:function(e){
@@ -52,23 +73,6 @@ Page({
         currentData: e.target.dataset.current
       })
     }
-  },
-  autoHeight: function() {
-    wx.createSelectorQuery()
-      .select("#end" + this.data.currentTab)
-      .boundingClientRect()
-      .select("#start" + this.data.currentTab)
-      .boundingClientRect()
-      .exec(rect => {
-        let _space = rect[0].bottom - rect[1].top+49;
-        _space = _space + "px";
-        console.error("_space"+ _space)
-        this.setData({
-          swiper_height: _space
-        });
-      });
-     
-      console.error(this.data.swiper_height);
   }
   
 })

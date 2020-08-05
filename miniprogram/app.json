@@ -1,15 +1,14 @@
 {
   "pages": [
-    "pages/main/main",
-    "pages/main/user_type/user_type",
-    "pages/school/index/index",
     "pages/test/test",
+    "pages/main/main",
+    "pages/school/index/index",
+    "pages/main/user_type/user_type",
     "pages/toplist/toplist",
     "pages/user/user",
     "pages/school/class/class",
     "pages/school/d_fir_class/d_fir_class",
-    "pages/school/s_about/s_about",
-    "pages/school/show/show"
+    "pages/school/s_about/s_about"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
