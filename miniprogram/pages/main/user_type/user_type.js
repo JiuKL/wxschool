@@ -157,7 +157,6 @@ Page({
    * 省份选择
   */
   pickerPl: function (e) {
-    var that = this
     this.setData({
       pl_index: e.detail.value,
       type:that.data.types[that.data.pl[e.detail.value]]
@@ -187,12 +186,6 @@ Page({
       fail: ()=>{},
       complete: ()=>{}
     });
-  },
-  /**
-   * 科类判断
-  */
-  flag: function(e){
-    
   },
   /**
    * 警告弹窗

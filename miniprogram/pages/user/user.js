@@ -7,6 +7,7 @@ Page({
   data: {
     //判断小程序的API，回调，参数，组件等是否在当前版本可用
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    // canIUse: false,
     nickName: '',
     imgUrl: ''
   },
@@ -61,7 +62,25 @@ Page({
       }
     })
   },
-
+  getUserInfo: function(e){
+    wx.showLoading({
+      title: '加载中',
+    })
+    console.log(e.detail.userInfo)
+    if(e.detail.userInfo){
+      console.log("授权成功")
+      setTimeout(()=>{
+        wx.hideLoading();
+        this.setData({
+          canIUse:true
+        })
+      },1000)
+      
+      
+    }else{
+      console.log("授权失败")
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

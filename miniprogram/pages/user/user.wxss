@@ -110,10 +110,31 @@ button:active .btnimg {
     height: 75rpx;
     position: absolute;
     bottom: 10rpx;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.end > button{
+    width: 80%;
+}
+.btnimg {
+    display: flex;
+    position: relative;
+    padding-right: 10rpx;
+    width: 46rpx;
+    height: 46rpx;
 }
 
+button::after {
+    border-radius: 98rpx;
+    border: 0;
+}
+
+button:active .btnimg {
+    src: url('https://6d73-msgid-1259714111.tcb.qcloud.la/icon/weixin_black.png?sign=68df84404a752377e77a16bd7b80e6d5&t=1587400492');
+}
 .end text{
+    margin-top: 18rpx;
     font-size: xx-small;
     text-align: center;
     color: #bdc3c7;

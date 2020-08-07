@@ -5,8 +5,8 @@
       高校层次：
       <text class="level-item" wx:for="{{school.level}}" wx:key="index">{{item}}</text>
     </view>
-    <view class="msg-item">高校类型：{{school.type}}</view>
-    <view class="msg-item">所属地区：{{school.pl}}</view>
+    <view>高校类型：{{school.type}}</view>
+    <view>所属地区：{{school.pl}}</view>
   </view>
 </view>
 <view class='topTabSwiper' wx:if="{{gallery!=true}}">
@@ -19,7 +19,7 @@
   <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'>
     招生
   </view>
-  <swiper current="{{currentData}}" class='swiper' style="height:2500rpx;" duration="300" bindchange="bindchange">
+  <swiper current="{{currentData}}" class='swiper' style="height:2100rpx;" duration="300" bindchange="bindchange">
     <swiper-item>
       <view class='swiper_con'>
         <view class="nju_jianjie">
@@ -27,10 +27,8 @@
             {{school.msg}}
           </text>
         </view>
-        <view class="more">
-          <navigator class="more-a" url="/pages/school/s_about/s_about" style="display:inline">
+        <view class="more" bindtap="moreClick">
             查看更多
-          </navigator>
         </view>
         <view class="dian-numb">
           <image class="boshidian" src="cloud://msgid.6d73-msgid-1259714111/icon/博士点.jpg" ></image>
@@ -96,14 +94,80 @@
       </view>
     </swiper-item>
     <swiper-item>
-      <view class='swiper_con1'>welcome come to 录取</view>
+      <view class='swiper_con'>welcome come to 录取</view>
     </swiper-item>
     <swiper-item>
-      <view class='swiper_con2'>welcome come to 招生</view>
+      <view class='swiper_con'>
+        <view class="top_msg">
+          <view class="msg-item">
+            <view class="msg-title">
+              <view class="icon iconfont icon-home"></view>
+              <view class="icon-title">官方网址：</view>
+            </view>
+            <view class="msg-txt">
+              <text >{{school.url}}</text>
+            </view>
+          </view>
+          <view class="msg-item">
+            <view class="msg-title">
+              <view class="icon iconfont icon-phone"></view>
+              <view class="icon-title">官方电话：</view>
+            </view>
+            <view class="msg-txt">
+              <text >{{school.phone_numb}}</text> 
+            </view>
+          </view>
+          <view class="msg-item">
+            <view class="msg-title">
+              <view class="icon iconfont icon-email"></view>
+              <view class="icon-title">电子邮箱：</view>
+            </view>
+            <view class="msg-txt">
+              <text >{{school.email}}</text> 
+            </view>
+          </view>
+        </view>
+        <view class="plan">
+          <view class="plan-top">
+            <view class="plan-title">招生计划</view>
+            <view class="choose">
+              <picker bindchange="pickerProvince" value="{{index}}" range="{{s_plan.pls}}">
+                <m-select name="{{pl}}"></m-select>
+              </picker>
+              <picker bindchange="pickerType" value="{{index}}" range="{{s_plan.plan[pl].type}}">
+                <m-select name="{{type}}"></m-select>
+              </picker>
+              <picker bindchange="pickerYear" value="{{index}}" range="{{s_plan.plan[pl].year}}">
+                <m-select name="{{year}}"></m-select>
+              </picker>
+              <picker bindchange="pickerBatch" value="{{index}}" range="{{s_plan.plan[pl].batch}}">
+                <m-select name="{{batch}}"></m-select>
+              </picker>
+            </view>
+          </view>
+          <view class="plan-msg">
+            <view class="table">
+              <view class="tr">
+                <view class="th">专业名称</view>
+                <view class="th">学科门类</view>
+                <view class="th">专业类</view>
+                <view class="th">计划招生</view>
+              </view>
+              <view class="tr" wx:for="{{s_plan.plan[pl][type][batch]}}" wx:key="index">
+                <view class="td">{{item.name}}</view>
+                <view class="td">{{item.class_type}}</view>
+                <view class="td">{{item.specialty_type}}</view>
+                <view class="td">{{item.numb}}</view>
+              </view>
+              
+            </view>
+          </view>
+        </view>
+      </view>
     </swiper-item>
   </swiper>
 </view>
-<view class="Page">
+<view class="Page" wx:if="{{gallery}}">
     <swiper circular="{{true}}" class="swiper-main">
         <swiper-item wx:for="{{pics}}" wx:key="index">
             <view wx:if="{{gallery}}" class="weui-gallery fadeIn" bindtap="close">

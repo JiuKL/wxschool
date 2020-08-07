@@ -1,14 +1,15 @@
 <!-- pages/shouye.wxml -->
 <view class="haibao">
+   <!-- 图片比例375/180 -->
    <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" circular autoplay interval="4000">
       <swiper-item>
-         <image src="../../images/list1.jpg"></image>
+         <image src="../../images/list01.jpg"></image>
       </swiper-item>
       <swiper-item>
-         <image src="../../images/list2.jpg"></image>
+         <image src="../../images/list02.jpg"></image>
       </swiper-item>
       <swiper-item>
-         <image src="../../images/list3.jpg"></image>
+         <image src="../../images/list03.jpg"></image>
       </swiper-item>
    </swiper>
 </view>
@@ -21,7 +22,7 @@
       </view>
       <view class="top-right">
          <view class="title">科类</view>
-         <m-select name="理工"></m-select>
+         <m-select name="{{type}}"></m-select>
       </view>
    </view>
    <view class="mid">

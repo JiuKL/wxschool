@@ -2,11 +2,15 @@
 page{
    background-color: #f4f6f7;
 }
+swiper{
+   width: 100%;
+   height: 360rpx;
+}
 .haibao{
    width: 100%;
-   height: 333rpx;
+   height: 360rpx;
 }
-.haibao image{width: 100%;height:333rpx;}
+.haibao image{width: 100%;height:360rpx;}
 .find-main{
    width: 90%;
    height: 400rpx;
@@ -78,6 +82,7 @@ page{
    text-align: center;
    font-size:30rpx;
    background-color: #FFF;
+   border: 1rpx #dfe4ea solid;
 }
 .icon{
    position: absolute;

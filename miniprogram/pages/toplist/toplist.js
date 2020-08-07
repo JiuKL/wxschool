@@ -125,7 +125,6 @@ Page({
     })
     wx.navigateTo({
       url: '../school/index/index?id=' + e.currentTarget.dataset.id,
-
     })
   },
   /**

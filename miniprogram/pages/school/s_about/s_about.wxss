@@ -1,1 +1,49 @@
 /* pages/njujianjie/njujianjie0.wxss */
+page{
+    background-color: #f1f2f6;
+}
+.page{
+    width: 88%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top{
+    width: 80%;
+    height: 120rpx;
+    margin-top: 100rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title{
+    font-size: x-large;
+    font-weight: 500;
+}
+.des{
+    color: #a4b0be;
+    font-size: 30rpx;
+}
+.body{
+    width: 100%;
+    margin-top: 120rpx;
+}
+.h1{
+    font-size: x-large;
+    font-weight: 600;
+}
+.msg{
+    margin-top: 20rpx;
+    text-align: left;
+    line-height: 55rpx;
+    color: #2f3542;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+image{
+    margin-top: 25rpx;
+    box-shadow: 0 0.13rem 0.3rem rgba(0,0,0,0.12), 0.13rem 0.16rem 0.46rem rgba(0,0,0,0.12);
+    border-radius: 10rpx;
+}

@@ -12,7 +12,11 @@ Page({
     searchValue:"请输入分数",
     eorror_msg:'未找到',
     pl:'北京',
-    type:'请选择'
+    type:'请选择',
+    f_score:{
+      "江苏": 480,
+      "上海": 660
+    }
   },
   /**
    * placeholder抖动问题

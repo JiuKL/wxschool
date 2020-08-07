@@ -1,0 +1,67 @@
+{
+    "name": "北京大学",
+    "pls": [
+        "北京"
+    ],
+    "plan": {
+        "北京": {
+            "type": [
+                "综合"
+            ],
+            "year": [
+                "2020"
+            ],
+            "batch": [
+                "本科批"
+            ],
+            "综合": {
+                "本科批": [
+                    {
+                        "name": "文科试验班类（全校教学资源范围内自由选择专业）",
+                        "class_type": "-",
+                        "specialty_type": "-",
+                        "numb": "1"
+                    },
+                    {
+                        "name": "中国语言文学类",
+                        "class_type": "文学",
+                        "specialty_type": "中国语言文学类",
+                        "numb": "10"
+                    },
+                    {
+                        "name": "考古学",
+                        "class_type": "历史学",
+                        "specialty_type": "历史学类",
+                        "numb": "6"
+                    },
+                    {
+                        "name": "历史学类",
+                        "class_type": "历史学",
+                        "specialty_type": "历史学类",
+                        "numb": "6"
+                    },
+                    {
+                        "name": "哲学类",
+                        "class_type": "哲学",
+                        "specialty_type": "哲学类",
+                        "numb": "7"
+                    },
+                    {
+                        "name": "社会学类",
+                        "class_type": "法学",
+                        "specialty_type": "社会学类",
+                        "numb": "10"
+                    },
+                    {
+                        "name": "国际政治",
+                        "class_type": "法学",
+                        "specialty_type": "政治学类",
+                        "numb": "10"
+                    }
+                ]
+            }
+
+            
+        }
+    }
+}

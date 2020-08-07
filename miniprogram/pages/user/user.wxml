@@ -34,5 +34,9 @@
     </view>
 </view>
 <view class="end">
+    <button wx:if="{{canIUse == false}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+        <image class="btnimg" src="cloud://msgid.6d73-msgid-1259714111/icon/weixin_white.png" />
+        <view class="btnmsg">授权登陆</view>
+    </button> 
     <text selectable="{{false}}">Copyright © 2020-2021 高考助手</text>
 </view>

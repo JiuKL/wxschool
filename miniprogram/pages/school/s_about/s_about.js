@@ -5,14 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    name:'',
+    article:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var article = JSON.parse(options.article)
+    this.setData({
+      name: options.name,
+      article: article
+    })
+    console.log(this.data)
   },
 
   /**
