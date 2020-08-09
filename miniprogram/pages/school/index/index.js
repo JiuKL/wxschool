@@ -10,15 +10,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-      pl:'',//省份下标
-      type:'',//种类下标
-      year:'',//时间下标
-      batch:'',//批次下标
+      plan_pl:'',//省份下标
+      plan_type:'',//种类下标
+      plan_year:'',//时间下标
+      plan_batch:'',//批次下标
+
+      grade_pl:'',//录取分数省份下标
+      grade_type:'',//录取分数种类下标
+
       gallery: false,//画廊
-      currentData : 0,//当前页面id
+      currentData : 1,//当前页面id
       pics:[],//图片
       school:{},//学校信息
-      s_plan:{}
+      s_grade:{},//学校各省分数线信息
+      s_plan:{}//计划招生信息
   },
   /**
    * 生命周期函数--监听页面加载
@@ -31,8 +36,8 @@ Page({
     var that = this;
     // console.log("id："+id)
     db.collection('s_msg').where({
-      _id:id
-      // _id:'0fa17ad55f2d2a630000b8fa4081349b'
+      // _id:id
+      _id:'0fa17ad55f2d2a630000b8fa4081349b'
     }).get({
       success: function(res){
         that.setData({
@@ -51,11 +56,18 @@ Page({
             that.setData({
               s_plan:res.data[0]//学校招生计划
             })
-            that.init()
-            wx.hideLoading();
-            console.log(that.data.school)
-            console.log(that.data.s_plan)
           }
+        })
+        db.collection('s_grade').where({
+          name:res.data[0].name
+        }).get()
+        .then(res=>{
+          that.setData({
+            s_grade:res.data[0]//学校招生计划
+          })
+          that.init()
+          console.log(that.data)
+          wx.hideLoading();
         })
       }
     })
@@ -67,10 +79,12 @@ Page({
   init: function(){
     var that = this
     this.setData({
-      pl: that.data.s_plan.pls[0],
-      type:that.data.s_plan.plan[that.data.s_plan.pls[0]].type[0],
-      year:that.data.s_plan.plan[that.data.s_plan.pls[0]].year[0],
-      batch:that.data.s_plan.plan[that.data.s_plan.pls[0]].batch[0]
+      plan_pl: that.data.s_plan.pls[0],
+      plan_type:that.data.s_plan.plan[that.data.s_plan.pls[0]].type[0],
+      plan_year:that.data.s_plan.plan[that.data.s_plan.pls[0]].year[0],
+      plan_batch:that.data.s_plan.plan[that.data.s_plan.pls[0]].batch[0],
+      grade_pl: that.data.s_grade.pls[0],
+      grade_type:that.data.s_grade.grade.type[0],
     })
   },
   /**
@@ -97,26 +111,38 @@ Page({
     });
   },
   /**
-   * 招生计划选择
+   * 类别选择
   */
   pickerProvince: function(e){
     var that = this
-    this.setData({
-      pl: that.data.s_plan.pls[e.detail.value],
-      type:that.data.s_plan.plan[that.data.s_plan.pls[e.detail.value]].type[0],
-      year:that.data.s_plan.plan[that.data.s_plan.pls[e.detail.value]].year[0],
-      batch:that.data.s_plan.plan[that.data.s_plan.pls[e.detail.value]].batch[0]
-    })
+    if(this.data.currentData==2){
+      this.setData({
+        plan_pl: that.data.s_plan.pls[e.detail.value],
+        plan_type:that.data.s_plan.plan[that.data.s_plan.pls[e.detail.value]].type[0],
+        plan_year:that.data.s_plan.plan[that.data.s_plan.pls[e.detail.value]].year[0],
+        plan_batch:that.data.s_plan.plan[that.data.s_plan.pls[e.detail.value]].batch[0]
+      })
+    }else if(this.data.currentData==1){
+      this.setData({
+        grade_pl: that.data.s_grade.pls[e.detail.value],
+        grade_type:  that.data.s_grade.grade.type[0]
+      })
+    }
+    
     console.log(this.data)
-    // this.onLoad()
   },
   pickerType: function(e){
     var that = this
-    this.setData({
-      type:that.data.s_plan.plan[that.data.pl].type[e.detail.value]
-    })
+    if(this.data.currentData==2){
+      this.setData({
+        type:that.data.s_plan.plan[that.data.pl].type[e.detail.value]
+      })
+    }else if(this.data.currentData==1){
+      this.setData({
+        grade_type:  that.data.s_grade.grade.type[e.detail.value]
+      })
+    }
     console.log(this.data)
-    // this.onLoad()
   },
   pickerYear: function(e){
     var that = this
@@ -124,7 +150,6 @@ Page({
       year: that.data.s_plan.plan[that.data.pl].year[e.detail.value]
     })
     console.log(this.data)
-    // this.onLoad()
   },
   pickerBatch: function(e){
     var that = this
@@ -132,7 +157,6 @@ Page({
       batch:that.data.s_plan.plan[that.data.pl].batch[e.detail.value]
     })
     console.log(this.data)
-    // this.onLoad()
   },
   //获取当前滑块的index
   bindchange:function(e){

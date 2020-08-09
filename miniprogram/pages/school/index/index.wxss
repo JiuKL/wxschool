@@ -206,21 +206,6 @@ page{
   height: 40rpx;
   margin-left: 110rpx;
 }
-.icon-home::after{
-  content: '\e60c';
-  color: #70a1ff;
-  text-align: center;
-}
-.icon-email::after{
-  content: '\e610';
-  color: #70a1ff;
-  text-align: center;
-}
-.icon-phone::after{
-  content: '\e60e';
-  color: #70a1ff;
-  text-align: center;
-}
 .top_msg{
   width: 100%;
 }
@@ -235,14 +220,31 @@ page{
   flex-wrap: nowrap;
   align-items: center;
   width: 30%;
+  /* border: 1rpx #000 solid; */
 }
 .msg-title>.icon-title{
-  margin-left: 5rpx;
-  margin-left: 10rpx;
+  margin-left: 18rpx;
 }
 .msg-title>.icon{
   width: 60rpx;
-  height: 60rpx;
+  height: 100%;
+  margin-top: 0;
+  /* border: 1rpx #000 solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon-home::after{
+  content: '\e60c';
+  color: #70a1ff;
+}
+.icon-email::after{
+  content: '\e610';
+  color: #70a1ff;
+}
+.icon-phone::after{
+  content: '\e60e';
+  color: #70a1ff;
 }
 .msg-txt{
   color: #2f3542;
@@ -255,24 +257,25 @@ page{
   margin-top: 20rpx;
   background-color: #FFF;
 }
-.plan-title{
-  font-size: 30rpx;
-  font-weight: 600;
-  margin-left: 20rpx;
-  margin-top: 5rpx;
-}
 .plan-top{
   width: 100%;
   height: 70rpx;
   display: flex;
   flex-wrap: nowrap;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1rpx #ccc solid;
+}
+.plan-top>.plan-title{
+  font-size: 25rpx;
+  font-weight: 600;
+  position: relative;
+  left: 20rpx;
 }
 .plan-top > .choose{
   display: flex;
   flex-wrap: nowrap;
-  margin-left: 50rpx;
+  align-items: center;
 }
 .table{
   display: flex;
@@ -284,16 +287,28 @@ page{
   flex-wrap: nowrap;
   align-items: center;
 }
-.td:nth-child(1),.th:nth-child(1){
+.grade-table .td:nth-child(1),.grade-table .th:nth-child(1){
+  width: 25%;
+}
+.grade-table .td:nth-child(2),.grade-table .th:nth-child(2){
+  width: 25%;
+}
+.grade-table .td:nth-child(3),.grade-table .th:nth-child(3){
+  width: 25%;
+}
+.grade-table .td:nth-child(4),.grade-table .th:nth-child(4){
+  width: 25%;
+}
+.plan-table .td:nth-child(1),.plan-table .th:nth-child(1){
   width: 40%;
 }
-.td:nth-child(2),.th:nth-child(2){
+.plan-table .td:nth-child(2),.plan-table .th:nth-child(2){
   width: 20%;
 }
-.td:nth-child(3),.th:nth-child(3){
+.plan-table .td:nth-child(3),.plan-table .th:nth-child(3){
   width: 20%;
 }
-.td:nth-child(4),.th:nth-child(4){
+.plan-table .td:nth-child(4),.plan-table .th:nth-child(4){
   width: 20%;
 }
 .th,.td{

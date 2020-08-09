@@ -1,3 +1,4 @@
+var appInst =  getApp();
 
 Page({
 
@@ -36,6 +37,8 @@ Page({
           wx.getUserInfo({
             success(res){
               console.log(res.userInfo)
+              appInst.userData.nickName = res.userInfo.nickName
+              appInst.userData.imgUrl = res.userInfo.imgUrl
               that.setData({
                 nickName: res.userInfo.nickName,
                 imgUrl: res.userInfo.avatarUrl
@@ -74,11 +77,28 @@ Page({
         this.setData({
           canIUse:true
         })
+        this.onLoad()
       },1000)
       
       
     }else{
       console.log("授权失败")
+    }
+  },
+  click: function(e){
+    console.log(e)
+    if(e.currentTarget.dataset.id==0){
+      wx.navigateTo({
+        url: './feedback/feedback',
+      });
+    }else if(e.currentTarget.dataset.id==1){
+      wx.navigateTo({
+        url: './function/function',
+      });
+    }else if(e.currentTarget.dataset.id==2){
+      wx.navigateTo({
+        url: './about/about',
+      });
     }
   },
   /**

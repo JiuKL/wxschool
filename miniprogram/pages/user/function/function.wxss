@@ -1,0 +1,12 @@
+/* miniprogram/pages/user/function/function.wxss */
+page{
+  width: 100%;
+  height: 100%;
+}
+image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -3,13 +3,13 @@
    <!-- 图片比例375/180 -->
    <swiper indicator-dots indicator-color="rgba(255,255,255,0.5)" indicator-active-color="#fff" circular autoplay interval="4000">
       <swiper-item>
-         <image src="../../images/list01.jpg"></image>
+         <image src="cloud://msgid.6d73-msgid-1259714111/imges/wxschool/list01.jpg"></image>
       </swiper-item>
       <swiper-item>
-         <image src="../../images/list02.jpg"></image>
+         <image src="cloud://msgid.6d73-msgid-1259714111/imges/wxschool/list02.jpg"></image>
       </swiper-item>
       <swiper-item>
-         <image src="../../images/list03.jpg"></image>
+         <image src="cloud://msgid.6d73-msgid-1259714111/imges/wxschool/list03.jpg"></image>
       </swiper-item>
    </swiper>
 </view>
@@ -33,7 +33,7 @@
       </view>
    </view>
    <view class="end">
-      <view class="button" hover-class="b_click">智能筛选大学</view>
+      <view class="button" hover-class="b_click" bindtap="click">智能筛选大学</view>
    </view>
 </view>
 <!-- 警告框 -->

@@ -1,0 +1,88 @@
+/* pages/user/yijianfankui.wxss */
+
+page {
+  background-color: #f1f2f6;
+}
+
+.page {
+  width: 88%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  width: 80%;
+  height: 120rpx;
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.des {
+  margin-top: 25rpx;
+  color: #a4b0be;
+  font-size: 30rpx;
+}
+
+.title {
+  font-size: x-large;
+  font-weight: 500;
+}
+
+.body {
+  width: 100%;
+  margin-top: 120rpx;
+}
+.form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90rpx;
+  border-radius: 18rpx;
+  box-shadow: 0 0.03rem 0.05rem rgba(167, 167, 167, 0.12), 0 0.15rem 0.1rem rgba(167, 167, 167, 0.12);
+}
+.form-body{
+  width: 100%;
+  padding: 10rpx;
+  border-radius: 18rpx;
+  background-color: #fff;
+}
+
+.form-body > textarea{
+  width: 90%;
+  margin: auto;
+  border-radius: 18rpx;
+  background-color: #fff;
+  position: relative;
+  top: 25rpx;
+}
+.counter{
+  margin-top: 10rpx;
+  position: relative;
+  left: 500rpx;
+  font-size: 30rpx;
+  color: #ced6e0;
+}
+.button{
+  position: relative;
+  top: 40rpx;
+  margin: auto;
+  height: 80rpx;
+  width: 95%;
+  background-color: #54a0ff;
+  border-radius: 50rpx;
+  font-size: 35rpx;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s;
+}
+.b_click{
+  background-color: #2e86de;
+}

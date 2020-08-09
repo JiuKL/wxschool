@@ -63,8 +63,8 @@ button:active .btnimg {
     background-color: #fff;
     position: relative;
     top: -40rpx;
+    /* box-shadow: 0 -0.03rem 0.09rem rgba(0,0,0,0.12), 0 -0.16rem 0.36rem rgba(0,0,0,0.12); */
     border-top: 10rpx solid #00a8ff;
-    background-image:  url('https://6d73-msgid-1259714111.tcb.qcloud.la/icon/logo_opacity.png?sign=2034e0d613bba4d77a7c661accb81340&t=1587482467');
     background-size: 50% 50%;
     background-repeat: no-repeat;
     background-position: 50% 50%;

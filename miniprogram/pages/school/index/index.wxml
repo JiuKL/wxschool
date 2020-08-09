@@ -27,14 +27,12 @@
             {{school.msg}}
           </text>
         </view>
-        <view class="more" bindtap="moreClick">
-            查看更多
-        </view>
+        <view class="more" bindtap="moreClick">查看更多</view>
         <view class="dian-numb">
-          <image class="boshidian" src="cloud://msgid.6d73-msgid-1259714111/icon/博士点.jpg" ></image>
+          <image class="boshidian" src="cloud://msgid.6d73-msgid-1259714111/icon/博士点.jpg"></image>
           <text class="font-title">博士点</text>
           <text class="numb">{{school.boshidian}}</text>
-          <image class="shuoshidian" src="cloud://msgid.6d73-msgid-1259714111/icon/硕士点.jpg" ></image>
+          <image class="shuoshidian" src="cloud://msgid.6d73-msgid-1259714111/icon/硕士点.jpg"></image>
           <text class="font-title">硕士点</text>
           <text class="numb">{{school.shuoshidian}}</text>
         </view>
@@ -45,19 +43,33 @@
             </view>
             <view class="d-class-msg">
               <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length==0}}">
-                <view class="weui-flex__item"><view class="placeholder">暂无</view></view>
+                <view class="weui-flex__item">
+                  <view class="placeholder">暂无</view>
+                </view>
               </view>
               <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length>0}}">
-                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>0}}"><view class="placeholder">{{school.D_first_class[0]}}</view></view>
-                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>1}}"><view class="placeholder">{{school.D_first_class[1]}}</view></view>
-                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>2}}"><view class="placeholder">{{school.D_first_class[2]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>0}}">
+                  <view class="placeholder">{{school.D_first_class[0]}}</view>
+                </view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>1}}">
+                  <view class="placeholder">{{school.D_first_class[1]}}</view>
+                </view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>2}}">
+                  <view class="placeholder">{{school.D_first_class[2]}}</view>
+                </view>
               </view>
               <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length>3}}">
-                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>3}}"><view class="placeholder">{{school.D_first_class[3]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>3}}">
+                  <view class="placeholder">{{school.D_first_class[3]}}</view>
+                </view>
               </view>
               <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length>4}}">
-                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>4}}"><view class="placeholder">{{school.D_first_class[4]}}</view></view>
-                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>5}}"><view class="placeholder">{{school.D_first_class[5]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>4}}">
+                  <view class="placeholder">{{school.D_first_class[4]}}</view>
+                </view>
+                <view class="weui-flex__item" wx:if="{{school.D_first_class.length>5}}">
+                  <view class="placeholder">{{school.D_first_class[5]}}</view>
+                </view>
               </view>
             </view>
           </navigator>
@@ -69,32 +81,41 @@
             </view>
             <view class="d-class-msg">
               <view class="weui-flex l-msg" wx:if="{{school.open_class.length==0}}">
-                <view class="weui-flex__item"><view class="placeholder">暂无</view></view>
+                <view class="weui-flex__item">
+                  <view class="placeholder">暂无</view>
+                </view>
               </view>
               <view class="weui-flex l-msg" wx:if="{{school.open_class.length>0}}">
-                <view class="weui-flex__item" wx:if="{{school.open_class.length>0}}"><view class="placeholder">{{school.open_class[0]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>0}}">
+                  <view class="placeholder">{{school.open_class[0]}}</view>
+                </view>
               </view>
               <view class="weui-flex l-msg" wx:if="{{school.open_class.length>1}}">
-                <view class="weui-flex__item" wx:if="{{school.open_class.length>1}}"><view class="placeholder">{{school.open_class[1]}}</view></view>
-                <view class="weui-flex__item" wx:if="{{school.open_class.length>2}}"><view class="placeholder">{{school.open_class[2]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>1}}">
+                  <view class="placeholder">{{school.open_class[1]}}</view>
+                </view>
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>2}}">
+                  <view class="placeholder">{{school.open_class[2]}}</view>
+                </view>
               </view>
               <view class="weui-flex l-msg" wx:if="{{school.open_class.length>3}}">
-                <view class="weui-flex__item" wx:if="{{school.open_class.length>3}}"><view class="placeholder">{{school.open_class[3]}}</view></view>
-                <view class="weui-flex__item" wx:if="{{school.open_class.length>4}}"><view class="placeholder">{{school.open_class[4]}}</view></view>
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>3}}">
+                  <view class="placeholder">{{school.open_class[3]}}</view>
+                </view>
+                <view class="weui-flex__item" wx:if="{{school.open_class.length>4}}">
+                  <view class="placeholder">{{school.open_class[4]}}</view>
+                </view>
               </view>
             </view>
           </navigator>
         </view>
         <view class="div-main" bindtap="open">
-            <view class="show-pic">
-              <text class="title iconfont icon-left">校园风光</text>
-            </view>
-            <image class="img"src="cloud://msgid.6d73-msgid-1259714111/show/{{school.name}}/{{school.name}}_pic4.jpg" />
+          <view class="show-pic">
+            <text class="title iconfont icon-left">校园风光</text>
+          </view>
+          <image class="img" src="cloud://msgid.6d73-msgid-1259714111/show/{{school.name}}/{{school.name}}_pic4.jpg" />
         </view>
       </view>
-    </swiper-item>
-    <swiper-item>
-      <view class='swiper_con'>welcome come to 录取</view>
     </swiper-item>
     <swiper-item>
       <view class='swiper_con'>
@@ -105,7 +126,7 @@
               <view class="icon-title">官方网址：</view>
             </view>
             <view class="msg-txt">
-              <text >{{school.url}}</text>
+              <text>{{school.url}}</text>
             </view>
           </view>
           <view class="msg-item">
@@ -114,7 +135,7 @@
               <view class="icon-title">官方电话：</view>
             </view>
             <view class="msg-txt">
-              <text >{{school.phone_numb}}</text> 
+              <text>{{school.phone_numb}}</text>
             </view>
           </view>
           <view class="msg-item">
@@ -123,7 +144,75 @@
               <view class="icon-title">电子邮箱：</view>
             </view>
             <view class="msg-txt">
-              <text >{{school.email}}</text> 
+              <text>{{school.email}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="plan">
+          <view class="plan-top">
+            <view class="plan-title">各省分数线</view>
+            <view class="choose">
+              <picker bindchange="pickerProvince" value="{{index}}" range="{{s_grade.pls}}">
+                <m-select name="{{grade_pl}}"></m-select>
+              </picker>
+              <picker bindchange="pickerType" value="{{index}}" range="{{s_grade.grade.type}}">
+                <m-select name="{{grade_type}}"></m-select>
+              </picker>
+            </view>
+          </view>
+          <view class="plan-msg grade-table">
+            <view class="table">
+              <view class="tr">
+                <view class="th">年份</view>
+                <view class="th">最低分</view>
+                <view class="th">最低位次</view>
+                <view class="th">录取批次</view>
+              </view>
+              <view class="tr" wx:for="{{s_grade.grade[grade_pl][grade_type]}}" wx:key="index" wx:if="{{s_grade.grade[grade_pl][grade_type].length!=0}}">
+                <view class="td">{{item.year}}</view>
+                <view class="td">{{item.l_grade}}</view>
+                <view class="td">{{item.l_precedence}}</view>
+                <view class="td">{{item.batch}}</view>
+              </view>
+              <view class="tr" wx:if="{{s_grade.grade[grade_pl][grade_type].length==0}}">
+                <view class="td">-</view>
+                <view class="td">-</view>
+                <view class="td">-</view>
+                <view class="td">-</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class='swiper_con'>
+        <view class="top_msg">
+          <view class="msg-item">
+            <view class="msg-title">
+              <view class="icon iconfont icon-home"></view>
+              <view class="icon-title">官方网址：</view>
+            </view>
+            <view class="msg-txt">
+              <text>{{school.url}}</text>
+            </view>
+          </view>
+          <view class="msg-item">
+            <view class="msg-title">
+              <view class="icon iconfont icon-phone"></view>
+              <view class="icon-title">官方电话：</view>
+            </view>
+            <view class="msg-txt">
+              <text>{{school.phone_numb}}</text>
+            </view>
+          </view>
+          <view class="msg-item">
+            <view class="msg-title">
+              <view class="icon iconfont icon-email"></view>
+              <view class="icon-title">电子邮箱：</view>
+            </view>
+            <view class="msg-txt">
+              <text>{{school.email}}</text>
             </view>
           </view>
         </view>
@@ -132,20 +221,20 @@
             <view class="plan-title">招生计划</view>
             <view class="choose">
               <picker bindchange="pickerProvince" value="{{index}}" range="{{s_plan.pls}}">
-                <m-select name="{{pl}}"></m-select>
+                <m-select name="{{plan_pl}}"></m-select>
               </picker>
               <picker bindchange="pickerType" value="{{index}}" range="{{s_plan.plan[pl].type}}">
-                <m-select name="{{type}}"></m-select>
+                <m-select name="{{plan_type}}"></m-select>
               </picker>
               <picker bindchange="pickerYear" value="{{index}}" range="{{s_plan.plan[pl].year}}">
-                <m-select name="{{year}}"></m-select>
+                <m-select name="{{plan_year}}"></m-select>
               </picker>
               <picker bindchange="pickerBatch" value="{{index}}" range="{{s_plan.plan[pl].batch}}">
-                <m-select name="{{batch}}"></m-select>
+                <m-select name="{{plan_batch}}"></m-select>
               </picker>
             </view>
           </view>
-          <view class="plan-msg">
+          <view class="plan-msg plan-table">
             <view class="table">
               <view class="tr">
                 <view class="th">专业名称</view>
@@ -153,13 +242,12 @@
                 <view class="th">专业类</view>
                 <view class="th">计划招生</view>
               </view>
-              <view class="tr" wx:for="{{s_plan.plan[pl][type][batch]}}" wx:key="index">
+              <view class="tr" wx:for="{{s_plan.plan[plan_pl][plan_type][plan_batch]}}" wx:key="index">
                 <view class="td">{{item.name}}</view>
                 <view class="td">{{item.class_type}}</view>
                 <view class="td">{{item.specialty_type}}</view>
                 <view class="td">{{item.numb}}</view>
               </view>
-              
             </view>
           </view>
         </view>
@@ -168,14 +256,14 @@
   </swiper>
 </view>
 <view class="Page" wx:if="{{gallery}}">
-    <swiper circular="{{true}}" class="swiper-main">
-        <swiper-item wx:for="{{pics}}" wx:key="index">
-            <view wx:if="{{gallery}}" class="weui-gallery fadeIn" bindtap="close">
-                <view class="weui-gallery__info">{{index+1}}/{{pics.length}}</view>
-                <view class="weui-gallery__img__wrp">
-                    <image mode="aspectFit" class="weui-gallery__img" src="{{item}}"></image>
-                </view>
-            </view>
-        </swiper-item>
-    </swiper>
+  <swiper circular="{{true}}" class="swiper-main">
+    <swiper-item wx:for="{{pics}}" wx:key="index">
+      <view wx:if="{{gallery}}" class="weui-gallery fadeIn" bindtap="close">
+        <view class="weui-gallery__info">{{index+1}}/{{pics.length}}</view>
+        <view class="weui-gallery__img__wrp">
+          <image mode="aspectFit" class="weui-gallery__img" src="{{item}}"></image>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
 </view>

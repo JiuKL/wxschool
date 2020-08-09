@@ -2,17 +2,17 @@
     <view class="title">填写高考信息</view>
     <view class="main-item">
         <view class="item-title">高考省份</view>
-         <picker bindchange="pickerPl" value="{{index}}" range="{{pl}}">
-             <view class="select-large">
-                 <image class="icon" src="cloud://msgid.6d73-msgid-1259714111/icon/didian.png"/>
-                 <view class="msg1">{{pl[pl_index]}}</view>
-                 <view class="iconfont icon-down"></view>
-             </view>
+        <picker bindchange="pickerPl" value="{{index}}" range="{{pl}}">
+            <view class="select-large">
+                <image class="icon" src="cloud://msgid.6d73-msgid-1259714111/icon/didian.png" />
+                <view class="msg1">{{pl[pl_index]}}</view>
+                <view class="iconfont icon-down"></view>
+            </view>
         </picker>
     </view>
     <view class="main-item">
+        <view class="item-title">选考科类</view>
         <picker bindchange="pickerType" value="{{index}}" range="{{type}}">
-            <view class="item-title">选考科类</view>
             <view class="select-large">
                 <view class="msg2">{{type[type_index]}}</view>
                 <view class="iconfont icon-down"></view>
@@ -23,9 +23,9 @@
 </view>
 <!-- 警告框 -->
 <view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
-   <view class="weui-mask_transparent"></view>
-   <view class="weui-toast">
-      <i class="weui-icon-info weui-icon_msg"></i>
-      <view class="weui-toast__content">{{eorror_msg}}</view>
-   </view>
+    <view class="weui-mask_transparent"></view>
+    <view class="weui-toast">
+        <i class="weui-icon-info weui-icon_msg"></i>
+        <view class="weui-toast__content">{{eorror_msg}}</view>
+    </view>
 </view>

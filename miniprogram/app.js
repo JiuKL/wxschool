@@ -14,11 +14,24 @@ App({
         traceUser: true,
       })
     }
-
     this.globalData = {}
+    //通过云函数获取用户的openid
+    wx.cloud.callFunction({
+      name: 'getopenid',
+      complete: res => {
+        this.userData.openid = res.result.openId
+        console.log('openid: ', res.result.openId)
+        // 获取到用户的 openid
+        console.log(res);
+      }
+    })
+
   },
   userData:{
+    openid:'',
     pl:'',
-    type:''
+    type:'',
+    nickName: '',
+    imgUrl: ''
   }
 })
