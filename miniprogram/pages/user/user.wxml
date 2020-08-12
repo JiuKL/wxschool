@@ -13,24 +13,24 @@
 </view>
 <view class="userlist" >
     <view class="list">
-        <view class="main" style="border-top: 5rpx dashed #dcdde1;" bindtap="click" data-id="{{0}}">
-            <image src="cloud://msgid.6d73-msgid-1259714111/icon/yonghu.png" />
+        <view class="main" bindtap="click" data-id="{{0}}">
+            <image src="cloud://msgid.6d73-msgid-1259714111/icon/意见反馈.png" />
             <text selectable="{{false}}">意见反馈</text>
         </view>
         <view class="main" bindtap="click" data-id="{{1}}">
-            <image src="cloud://msgid.6d73-msgid-1259714111/icon/xinxi.png" />
+            <image src="cloud://msgid.6d73-msgid-1259714111/icon/功能.png" />
             <text selectable="{{false}}">功能介绍</text>
         </view>
         <view class="main" bindtap="click" data-id="{{2}}">
-            <image src="cloud://msgid.6d73-msgid-1259714111/icon/about.png" />
+            <image src="cloud://msgid.6d73-msgid-1259714111/icon/关于我们.png" />
             <text selectable="{{false}}">关于我们</text>
         </view>
+        <button wx:if="{{canIUse == false}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+            <image class="btnimg" src="cloud://msgid.6d73-msgid-1259714111/icon/weixin_white.png" />
+            <view class="btnmsg">授权登陆</view>
+        </button> 
     </view>
 </view>
 <view class="end">
-    <button wx:if="{{canIUse == false}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
-        <image class="btnimg" src="cloud://msgid.6d73-msgid-1259714111/icon/weixin_white.png" />
-        <view class="btnmsg">授权登陆</view>
-    </button> 
     <text selectable="{{false}}">Copyright © 2020-2021 高考助手</text>
 </view>

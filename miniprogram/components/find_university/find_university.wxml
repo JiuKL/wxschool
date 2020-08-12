@@ -1,0 +1,18 @@
+<view class="hengxian"></view>
+<view class="item">
+  <image src="cloud://msgid.6d73-msgid-1259714111/s_icon/{{name}}.jpg" class="icon"></image>
+  <view class="main">
+    <text class="sname">{{name}}</text>
+    <view class="level">
+      <text class="type" wx:for="{{level}}" wx:key="index">{{item}}</text>
+    </view>
+  </view>
+  <!-- colors:['#4cd137','#00a8ff','#e84118'], -->
+    <!-- flags:['保底','稳健','冲刺'], -->
+  <view class="redu">
+    <text class="redu_text" style="color: #00a8ff;" wx:if="{{(userScore < score + 20 && userScore > score - 20)}}">稳健</text>
+    <text class="redu_text" style="color: #4cd137;" wx:if="{{userScore > score + 20 }}">保底</text>
+    <text class="redu_text" style="color: #e84118;" wx:if="{{userScore < score - 20}}">冲刺</text>
+    <text class="redu_numb">{{score}}分</text>
+  </view>
+</view>

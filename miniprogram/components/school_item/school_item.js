@@ -1,18 +1,19 @@
 // Components/test/test.js
+var appInst = getApp();
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    name:{
-      type:String,
-      value:''
+    name: {
+      type: String,
+      value: ''
     },
-    hot:{
+    hot: {
       type: Number,
       value: ''
     },
-    level:{
+    level: {
       type: Array,
       value: []
     }
@@ -31,4 +32,5 @@ Component({
   methods: {
 
   }
+
 })

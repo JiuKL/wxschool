@@ -1,6 +1,8 @@
-page{
+page {
     height: 100%;
+    background-color: #f4f6f7;
 }
+
 .userbox {
     width: 100%;
     height: 350rpx;
@@ -8,7 +10,7 @@ page{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-image: url("https://6d73-msgid-1259714111.tcb.qcloud.la/imges/magazine-unlock-01-2.3.4042-_872525225E93CFA9510D.jpg?sign=1a8587037d0fa7363369c52418d05797&t=1587400227");
+    /* background-image: url("https://6d73-msgid-1259714111.tcb.qcloud.la/imges/magazine-unlock-01-2.3.4042-_872525225E93CFA9510D.jpg?sign=1a8587037d0fa7363369c52418d05797&t=1587400227"); */
     background-repeat: no-repeat;
 }
 
@@ -57,26 +59,21 @@ button:active .btnimg {
 }
 
 .userlist {
-    width: 100%;
+    margin: auto;
+    width: 85%;
     height: 55%;
     border-radius: 50rpx;
     background-color: #fff;
     position: relative;
     top: -40rpx;
-    /* box-shadow: 0 -0.03rem 0.09rem rgba(0,0,0,0.12), 0 -0.16rem 0.36rem rgba(0,0,0,0.12); */
-    border-top: 10rpx solid #00a8ff;
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
+    box-shadow: 0 0.03rem 0.09rem rgba(0, 0, 0, 0.12), 0 0.16rem 0.36rem rgba(0, 0, 0, 0.12);
 }
-
 
 .list {
     padding-top: 100rpx;
     border-radius: 15rpx;
     width: 100%;
     height: 100rpx;
-    position: absolute;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -90,7 +87,7 @@ button:active .btnimg {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 5rpx dashed #dcdde1;
+    border-bottom: 3rpx dashed #dcdde1;
 }
 
 .main image {
@@ -105,7 +102,8 @@ button:active .btnimg {
     display: inline-block;
     color: #212121;
 }
-.end{
+
+.end {
     width: 100%;
     height: 75rpx;
     position: absolute;
@@ -114,9 +112,12 @@ button:active .btnimg {
     flex-direction: column;
     align-items: center;
 }
-.end > button{
+
+.list>button {
     width: 80%;
+    transition: all 0.3s;
 }
+
 .btnimg {
     display: flex;
     position: relative;
@@ -126,14 +127,15 @@ button:active .btnimg {
 }
 
 button::after {
-    border-radius: 98rpx;
+    border-radius: 20%;
     border: 0;
 }
 
 button:active .btnimg {
     src: url('https://6d73-msgid-1259714111.tcb.qcloud.la/icon/weixin_black.png?sign=68df84404a752377e77a16bd7b80e6d5&t=1587400492');
 }
-.end text{
+
+.end text {
     margin-top: 18rpx;
     font-size: xx-small;
     text-align: center;

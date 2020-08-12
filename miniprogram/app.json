@@ -1,26 +1,27 @@
 {
   "pages": [
-    "pages/school/index/index",
     "pages/main/main",
-    "pages/user/feedback/feedback",
+    "pages/main/screening_university/screening_university",
+    "pages/toplist/toplist",
     "pages/user/user",
+    "pages/school/index/index",
+    "pages/user/feedback/feedback",
     "pages/school/s_about/s_about",
     "pages/test/test",
     "pages/main/user_type/user_type",
-    "pages/toplist/toplist",
     "pages/school/class/class",
     "pages/school/d_fir_class/d_fir_class",
     "pages/user/about/about",
     "pages/user/function/function"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
+    "backgroundColor": "#2980b9",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#3498db",
     "navigationBarTitleText": "高考助手",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
-  "cloud":true,
+  "cloud": true,
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {

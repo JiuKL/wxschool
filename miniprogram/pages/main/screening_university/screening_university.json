@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "f-school":"../../../components/find_university/find_university"
+  }
+}

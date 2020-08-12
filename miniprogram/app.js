@@ -31,6 +31,7 @@ App({
     openid:'',
     pl:'',
     type:'',
+    score:'',
     nickName: '',
     imgUrl: ''
   }

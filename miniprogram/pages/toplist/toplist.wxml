@@ -1,5 +1,5 @@
 <!-- pages/daxue/daxue.wxml -->
-<view class="bkgcolor" style="background:{{bkgcolor}}"></view>
+<view class="bkgcolor" ></view>
 <view class="searchbox">
    <input placeholder="请输入学校的名称" bindinput="getInput" bindconfirm="openLoading" value="{{val}}"></input>
    <icon type="search" class="findicon" bindtap="openLoading"></icon>
@@ -9,7 +9,17 @@
    <image src="../../images/火焰.png" class="tuijian3"></image>
 </view>
 <view class="main" wx:for="{{slist}}" wx:key="index">
-   <sitem data-id="{{item._id}}" data-index='{{index}}' name="{{item.name}}" data-hot="{{item.hot_list}}" hot="{{item.hot_list}}" level="{{item.level}}" bindtap="clickF"></sitem>
+   <sitem data-id="{{item._id}}" data-index='{{index}}' name="{{item.name}}" data-hot="{{item.hot_list}}" hot="{{item.hot_list}}" level="{{item.level}}" bindtap="goUniversity"></sitem>
+</view>
+<view class="weui-loadmore" wx:if="{{loadingmore}}">
+   <i class="weui-loading"></i>
+   <text class="weui-loadmore__tips">正在加载</text>
+</view>
+<view class="weui-loadmore weui-loadmore_line" wx:if="{{clickloading}}" bindtap="loadmore">
+   <text class="weui-loadmore__tips">点击加载更多</text>
+</view>
+<view class="weui-loading__wrp" wx:if="{{loadingend}}">
+   <view class="loading wx_dot_loading"></view>
 </view>
 <!-- 警告框 -->
 <view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">

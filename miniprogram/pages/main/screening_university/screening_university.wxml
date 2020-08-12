@@ -1,0 +1,4 @@
+
+<view class="body" wx:for="{{universitys}}" wx:key="index">
+   <f-school name="{{item.name}}" score="{{item.grade[user_province][user_type][0].l_grade}}" level="{{item.level}}" data-id="{{item._id}}" data-index='{{index}}' bindtap="goUniversity"></f-school>
+</view>

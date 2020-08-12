@@ -82,6 +82,7 @@ Page({
       
       
     }else{
+      wx.hideLoading();
       console.log("授权失败")
     }
   },
