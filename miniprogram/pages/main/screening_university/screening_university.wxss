@@ -1,65 +1,17 @@
-
-.hengxian{
-    margin-top: 20rpx;
-    width: 100%;
-    height: 8rpx;
-   background:  #F4F4F4;
-  }
-  .item{
-    position: relative;
-    display: flex;
-    margin-top: 20rpx;
-    width: 100%;
-    height: 170rpx;
-    align-items: center;
-  }
-  .main{
-    width: 400rpx;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-left: 25rpx;
-  }
-  .icon{
-    margin-left: 30rpx;
-    width: 150rpx;
-    height: 150rpx;
-  }
-  .sname{
-    margin-top: 15rpx;
-  }
-  .level{
-    flex-wrap: nowrap;
-    margin-top: 40rpx;
-    font-size: 25rpx;
-    color: #9f9f9fec;
-  }
-  .type{
-    border: 3rpx solid #9f9f9fec;
-    border-radius: 12%;
-    margin-left: 8rpx;
-  }
-  .redu{
-    width: 150rpx;
-    position: absolute;
-    right: 15rpx;
-    height: 50rpx;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: nowrap;
-    /* border: 1rpx #000 solid; */
-  }
-  .redu_text{
-    color: #4cd137;
-    display: block;
-    font-weight: 600;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 35rpx;
-  }
-  .redu_numb{
-    display: block;
-    margin-left: 5rpx;
-    font-size: x-small;
-    color: #2f3640;
-  }
+.top{
+  width: 100%;
+  padding-top: 10rpx;
+  padding-right: 5rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.top > .title{
+  position: relative;
+  right: 50rpx;
+  font-size: xx-small;
+}
+.body{
+  width: 100%;
+}

@@ -8,7 +8,7 @@ Page({
    */
   data: {
     toast: false,
-    hideToast: false,
+    hidetoast: false,
     pl_index: 0,
     type_index: 0,
     pl: [
@@ -157,6 +157,7 @@ Page({
    * 省份选择
   */
   pickerPl: function (e) {
+    var that = this
     this.setData({
       pl_index: e.detail.value,
       type:that.data.types[that.data.pl[e.detail.value]]
@@ -196,12 +197,12 @@ Page({
     });
     setTimeout(() => {
       this.setData({
-        hideToast: true
+        hidetoast: true
       });
       setTimeout(() => {
         this.setData({
           toast: false,
-          hideToast: false,
+          hidetoast: false,
         });
       }, 150);
     }, 1500);

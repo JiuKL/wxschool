@@ -39,7 +39,7 @@
         <view class="div-main">
           <navigator url="/pages/school/d_fir_class/d_fir_class">
             <view class="d-class">
-              <text class="title iconfont icon-left">双一流学科</text>
+              <text class="title iconfont icon-left">一流学科</text>
             </view>
             <view class="d-class-msg">
               <view class="weui-flex l-msg" wx:if="{{school.D_first_class.length==0}}">
@@ -223,13 +223,13 @@
               <picker bindchange="pickerProvince" value="{{index}}" range="{{s_plan.pls}}">
                 <m-select name="{{plan_pl}}"></m-select>
               </picker>
-              <picker bindchange="pickerType" value="{{index}}" range="{{s_plan.plan[pl].type}}">
+              <picker bindchange="pickerType" value="{{index}}" range="{{s_plan.plan[plan_pl].type}}">
                 <m-select name="{{plan_type}}"></m-select>
               </picker>
-              <picker bindchange="pickerYear" value="{{index}}" range="{{s_plan.plan[pl].year}}">
+              <picker bindchange="pickerYear" value="{{index}}" range="{{s_plan.plan[plan_pl].year}}">
                 <m-select name="{{plan_year}}"></m-select>
               </picker>
-              <picker bindchange="pickerBatch" value="{{index}}" range="{{s_plan.plan[pl].batch}}">
+              <picker bindchange="pickerBatch" value="{{index}}" range="{{s_plan.plan[plan_pl].batch}}">
                 <m-select name="{{plan_batch}}"></m-select>
               </picker>
             </view>

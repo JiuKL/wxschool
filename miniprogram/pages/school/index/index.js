@@ -55,7 +55,11 @@ Page({
         }).get({
           success: function (res) {
             that.setData({
-              s_plan: res.data[0]//学校招生计划
+              s_plan: res.data[0],//学校招生计划
+              plan_pl: res.data[0].pls[0],
+              plan_type: res.data[0].plan[res.data[0].pls[0]].type[0],
+              plan_year: res.data[0].plan[res.data[0].pls[0]].year[0],
+              plan_batch: res.data[0].plan[res.data[0].pls[0]].batch[0],
             })
           },
           fail: function (res) {
@@ -67,16 +71,17 @@ Page({
         }).get({
           success: function (res) {
             that.setData({
-              s_grade: res.data[0]//学校招生计划
+              s_grade: res.data[0],//学校招生计划
+              grade_pl: res.data[0].pls[0],
+              grade_type: res.data[0].grade.type[0],
             })
-            that.init()
+
             console.log(that.data)
-            wx.hideLoading();
 
           },
           fail: function (res) {
             console.log(res)
-          }
+          },
         })
       },
       fail: function(res){
@@ -86,21 +91,6 @@ Page({
     setTimeout(()=>{
       wx.hideLoading();
     },3000)
-
-  },
-  /**
-   * 招生页面初始化
-  */
-  init: function () {
-    var that = this
-    this.setData({
-      plan_pl: that.data.s_plan.pls[0],
-      plan_type: that.data.s_plan.plan[that.data.s_plan.pls[0]].type[0],
-      plan_year: that.data.s_plan.plan[that.data.s_plan.pls[0]].year[0],
-      plan_batch: that.data.s_plan.plan[that.data.s_plan.pls[0]].batch[0],
-      grade_pl: that.data.s_grade.pls[0],
-      grade_type: that.data.s_grade.grade.type[0],
-    })
   },
   /**
    * 查看更多跳转
@@ -192,8 +182,27 @@ Page({
         currentData: e.target.dataset.current
       })
     }
-  }
-
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    this.setData({})
+    setTimeout(() => {
+      wx.stopPullDownRefresh()
+      wx.hideLoading();
+    }, 1000)
+  },
 })
 
 

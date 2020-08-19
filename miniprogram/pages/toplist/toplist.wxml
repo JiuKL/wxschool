@@ -22,7 +22,7 @@
    <view class="loading wx_dot_loading"></view>
 </view>
 <!-- 警告框 -->
-<view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+<view class="fadeIn {{hidetoast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
    <view class="weui-mask_transparent"></view>
    <view class="weui-toast">
       <i class="weui-icon-info weui-icon_msg"></i>
@@ -30,7 +30,7 @@
    </view>
 </view>
 <!-- 加载框 -->
-<view class="fadeIn {{hideLoading ? 'fadeOut' : ''}}" wx:if="{{loading}}">
+<view class="fadeIn {{hideloading ? 'fadeOut' : ''}}" wx:if="{{loading}}">
    <view class="weui-mask_transparent"></view>
    <view class="weui-toast">
       <i class="weui-loading weui-icon_toast"></i>

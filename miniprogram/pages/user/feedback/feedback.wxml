@@ -15,7 +15,7 @@
   <view class="button" hover-class="b_click" bindtap="addfeedback">完成</view>
 </view>
 <!-- 成功提示框 -->
-<view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+<view class="fadeIn {{hidetoast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
    <view class="weui-mask_transparent"></view>
    <view class="weui-toast">
       <i class="weui-icon-success weui-icon_msg"></i>

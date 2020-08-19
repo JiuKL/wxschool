@@ -11,15 +11,50 @@ Page({
    */
   data: {
     score: '',
+    u_pl: '全部',
     user_province: '',
     user_type: '',
-    universitys: []
+    universitys: [],
+    u_province: [
+      "全部",
+      "江苏",
+      "上海",
+      "安徽",
+      "北京",
+      "福建",
+      "甘肃",
+      "广东",
+      "广西",
+      "贵州",
+      "河北",
+      "河南",
+      "黑龙江",
+      "湖北",
+      "湖南",
+      "吉林",
+      "江西",
+      "辽宁",
+      "内蒙古",
+      "宁夏",
+      "青海",
+      "山东",
+      "山西",
+      "陕西",
+      "四川",
+      "天津",
+      "西藏",
+      "新疆",
+      "云南",
+      "重庆",
+      "浙江",
+    ]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var t_universitys = [];//用变量操作完成再页面渲染，否则页面渲染易出错
     wx.showLoading({
       title: '加载中',
       mask: true
@@ -42,36 +77,44 @@ Page({
     var grade = 'grade.' + appInst.userData.pl + '.' + appInst.userData.type + '.0.l_grade'
 
     db.collection('s_grade').where({
-      [grade]: _.lte(that.data.score + 20)
-    }).limit(20).get({
-      success: function (res) {
-        res.data.forEach(element => {
-          db.collection('s_msg').where({
-            name: element.name
-          }).get().then(res => {
-            that.setData({
-              universitys: that.data.universitys.concat(res.data)
-            })
-            var local_province = 'universitys[' + (that.data.universitys.length - 1) + '].local_province'
-            var grade = 'universitys[' + (that.data.universitys.length - 1) + '].grade'
-            // console.log(local_province)
-            // console.log(grade)
-            that.setData({
-              [local_province]: element.local_province,
-              [grade]: element.grade
-            })
-          })
-        });
-      }
+      [grade]: _.lte(that.data.score + 20).and(_.gte(that.data.score - 90))
+      // [grade]: _.lte(that.data.score + 20)
     })
-    setTimeout(() => {
-      wx.hideLoading();
-    }, 1500)
+      .orderBy(grade, 'desc')
+      .limit(20)
+      .get({
+        success: function (res) {
+          /**
+           * 连接表查询
+          */
+          res.data.forEach(element => {
+            db.collection('s_msg').where({
+              name: element.name
+            }).get().then(res => {
+              t_universitys = t_universitys.concat(res.data)
+              t_universitys[t_universitys.length - 1].local_province = element.local_province
+              t_universitys[t_universitys.length - 1].grade = element.grade
+            })
+          });
+
+          setTimeout(() => {
+
+            var sortjson = t_universitys.sort(that.compare())
+            that.setData({
+              universitys: sortjson
+            })
+            wx.hideLoading();
+          }, 1500)
+        }
+      })
+
+
+
     console.log(this.data)
   },
   /**
-     * 加载大学详情
-    */
+   * 加载大学详情
+   */
   goUniversity: function (e) {
     var that = this
     var index = e.currentTarget.dataset.index
@@ -87,6 +130,67 @@ Page({
     wx.navigateTo({
       url: '../../school/index/index?id=' + e.currentTarget.dataset.id,
     })
+  },
+  /**
+   * 排序方法
+  */
+  compare: function () {
+    return function (a, b) {
+      var value1 = a.grade[appInst.userData.pl][appInst.userData.type][0].l_grade;
+      var value2 = b.grade[appInst.userData.pl][appInst.userData.type][0].l_grade;
+      return value2 - value1;
+    }
+  },
+  /**
+   * 筛选学校
+  */
+  pickerProvince: function (e) {
+    if(e.detail.value==0){
+      this.onLoad({score:appInst.userData.score})
+    }
+    var t_universitys = [];
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    });
+    var that = this
+    this.setData({
+      u_pl:this.data.u_province[e.detail.value],
+      universitys:[]
+    })
+    var grade = 'grade.' + appInst.userData.pl + '.' + appInst.userData.type + '.0.l_grade'
+    db.collection('s_grade').where({
+      // [grade]: _.lte(that.data.score + 20).and(_.gte(that.data.score - 90))
+      local_province:that.data.u_province[e.detail.value],
+      [grade]: _.lte(that.data.score + 20)
+    })
+      .orderBy(grade, 'desc')
+      .limit(20)
+      .get({
+        success: function (res) {
+          /**
+           * 连接表查询
+          */
+          res.data.forEach(element => {
+            db.collection('s_msg').where({
+              name: element.name
+            }).get().then(res => {
+              t_universitys = t_universitys.concat(res.data)
+              t_universitys[t_universitys.length - 1].local_province = element.local_province
+              t_universitys[t_universitys.length - 1].grade = element.grade
+            })
+          });
+
+          setTimeout(() => {
+
+            var sortjson = t_universitys.sort(that.compare())
+            that.setData({
+              universitys: sortjson
+            })
+            wx.hideLoading();
+          }, 1500)
+        }
+      })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

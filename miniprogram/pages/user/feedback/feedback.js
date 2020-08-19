@@ -7,7 +7,7 @@ Page({
     txtvalue:'',
     nickname: '',
     toast: false,
-    hideToast: false,
+    hidetoast: false,
     len:0
   },
   onLoad: function (options) {
@@ -55,12 +55,12 @@ Page({
     });
     setTimeout(() => {
       this.setData({
-        hideToast: true
+        hidetoast: true
       });
       setTimeout(() => {
         this.setData({
           toast: false,
-          hideToast: false,
+          hidetoast: false,
         });
       }, 150);
     }, 1500);

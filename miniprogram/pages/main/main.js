@@ -9,7 +9,7 @@ Page({
   data: {
     //警告窗
     toast: false,
-    hideToast: false,
+    hidetoast: false,
     error_msg: '未找到符合条件的学校',
     warn_icon:'warn',
     //输入框
@@ -128,16 +128,16 @@ Page({
     });
     setTimeout(() => {
       this.setData({
-        hideToast: true
+        hidetoast: true
       });
       setTimeout(() => {
         this.setData({
           toast: false,
-          hideToast: false,
+          hidetoast: false,
           bkgcolor: "#fff"
         });
-      }, 150);
-    }, 1500);
+      }, 100);
+    }, 1000);
   },
   /**
    * 生命周期函数--监听页面加载

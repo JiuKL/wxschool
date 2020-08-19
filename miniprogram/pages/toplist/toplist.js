@@ -13,8 +13,8 @@ Page({
      */
     toast: false,
     loading: false,
-    hideToast: false,
-    hideLoading: false,
+    hidetoast: false,
+    hideloading: false,
     eorror_msg: '未找到',
     /**
      * 加载更多前端控制
@@ -46,10 +46,8 @@ Page({
           slist: res.data
         })
         console.log(that.data.slist)
-        wx.hideLoading();
       },
-      error: function (res) {
-        wx.hideLoading();
+      fail: function (res) {
         console.log(res)
       }
     })
@@ -86,7 +84,7 @@ Page({
         }
 
       },
-      error: function (res) {
+      fail: function (res) {
         that.openToast()
       }
     })
@@ -147,12 +145,12 @@ Page({
     });
     setTimeout(() => {
       this.setData({
-        hideToast: true
+        hidetoast: true
       });
       setTimeout(() => {
         this.setData({
           toast: false,
-          hideToast: false,
+          hidetoast: false,
         });
       }, 150);
     }, 1500);
@@ -166,13 +164,13 @@ Page({
     });
     setTimeout(() => {
       this.setData({
-        hideLoading: true
+        hideloading: true
       });
       setTimeout(() => {
         this.find()
         this.setData({
           loading: false,
-          hideLoading: false,
+          hideloading: false,
         });
       }, 150);
     }, 1500);
@@ -209,7 +207,15 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    this.setData({})
+    setTimeout(()=>{
+      wx.stopPullDownRefresh()
+      wx.hideLoading();
+    },1000)
   },
 
   /**

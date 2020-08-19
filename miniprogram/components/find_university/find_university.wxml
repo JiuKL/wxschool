@@ -11,8 +11,8 @@
     <!-- flags:['保底','稳健','冲刺'], -->
   <view class="redu">
     <text class="redu_text" style="color: #00a8ff;" wx:if="{{(userScore < score + 20 && userScore > score - 20)}}">稳健</text>
-    <text class="redu_text" style="color: #4cd137;" wx:if="{{userScore > score + 20 }}">保底</text>
-    <text class="redu_text" style="color: #e84118;" wx:if="{{userScore < score - 20}}">冲刺</text>
+    <text class="redu_text" style="color: #4cd137;" wx:if="{{userScore >= score + 20 }}">保底</text>
+    <text class="redu_text" style="color: #e84118;" wx:if="{{userScore <= score - 20}}">冲刺</text>
     <text class="redu_numb">{{score}}分</text>
   </view>
 </view>

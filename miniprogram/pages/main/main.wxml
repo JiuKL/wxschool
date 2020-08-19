@@ -37,7 +37,7 @@
    </view>
 </view>
 <!-- 警告框 -->
-<view class="fadeIn {{hideToast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
+<view class="fadeIn {{hidetoast ? 'fadeOut' : ''}}" wx:if="{{toast}}">
    <view class="weui-mask_transparent"></view>
    <view class="weui-toast">
       <i class="weui-icon-{{warn_icon}} weui-icon_msg-primary"></i>
