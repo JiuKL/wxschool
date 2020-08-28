@@ -18,7 +18,8 @@ Page({
     //用户数据
     pl: '北京',
     type: '请选择',
-    value:'',
+    grade:'',
+    location:'',
     f_score: {
       "江苏": 480,
       "上海": 660,
@@ -50,12 +51,16 @@ Page({
       "云南": 750,
       "重庆": 750,
       "浙江": 750,
-    }
+    },
+    choose_type: 0,
+    color_grade: '#3498db',
+    color_locant: '#bdc3c7',
+    type_color:['#bdc3c7','#3498db']
   },
   /**
    * 获取成绩
   */
-  getInput: function (e) {
+  getInputScore: function (e) {
     if(this.flag(e.detail.value)==3||this.flag(e.detail.value)==-1){
       this.setData({
         flag_color:'#fc5c65',
@@ -74,7 +79,32 @@ Page({
       })
     }
     this.setData({
-      value:e.detail.value
+      grade:e.detail.value
+    })
+  },
+  /**
+   * 获取位次
+  */
+  getInputLocant: function(e){
+    if(e.detail.value<0||e.detail.value>999999){
+      this.setData({
+        flag_color:'#fc5c65',
+        box_shadow:'box-shadow: 0 0 15rpx #fc5c65;'
+      })
+    }else{
+      this.setData({
+        flag_color:'#dfe4ea',
+        box_shadow:''
+      })
+    }
+    if(e.detail.value==''){
+      this.setData({
+        flag_color:'#dfe4ea',
+        box_shadow:''
+      })
+    }
+    this.setData({
+      location:e.detail.value
     })
   },
   /**
@@ -87,7 +117,7 @@ Page({
       return 2
     }else if(numb <= 0){
       return -1
-    }else if(numb <= 400){
+    }else if(numb <= 350){
       return 0
     }else{
       return 1
@@ -162,52 +192,109 @@ Page({
       this.openToast()
       return 
     }
-    console.log(this.data)
-    if(this.data.value>this.data.f_score[this.data.pl]){
-      this.setData({
-        error_msg:'请输入正确成绩',
-        flag_color:'#dfe4ea',
-        warn_icon: 'warn',
-        box_shadow:'',
-        value:''
-      })
-      this.openToast()
-    }else if(this.data.value==''){
-      this.setData({
-        error_msg:'成绩不能为空',
-        warn_icon: 'warn',
-        flag_color:'#dfe4ea',
-        box_shadow:'',
-        value:''
-      })
-      this.openToast()
-    }else if(this.data.value==this.data.f_score[this.data.pl]){
+    if(this.data.choose_type==1){
+      if(this.data.location<0||this.data.location>999999){
+        this.setData({
+          error_msg:'请输入正确位次',
+          flag_color:'#dfe4ea',
+          warn_icon: 'warn',
+          box_shadow:'',
+          location:''
+        })
+        this.openToast()
+        return
+      }
+      if(this.data.location==''){
+        this.setData({
+          error_msg:'位次不能为空',
+          warn_icon: 'warn',
+          flag_color:'#dfe4ea',
+          box_shadow:'',
+          grade:''
+        })
+        this.openToast()
+        return
+      }
       wx.navigateTo({
-        url: './screening_university/screening_university?flag=0&score='+this.data.value,
+        url: './screening_university/screening_university?flag=1&location='+this.data.location
       });
-    }else if(this.data.value <= 0){
-      this.setData({
-        error_msg:'请输入正确成绩',
-        warn_icon: 'warn',
-        flag_color:'#dfe4ea',
-        box_shadow:'',
-        value:''
-      })
-      this.openToast()
-    }else if(this.data.value < 400){
-      this.setData({
-        error_msg:'未找到符合条件的学校',
-        warn_icon: 'info',
-        flag_color:'#dfe4ea',
-        box_shadow:'',
-        value:''
-      })
-      this.openToast()
     }else{
-      appInst.userData.score = this.data.value
+      if(this.data.grade>this.data.f_score[this.data.pl]){
+        this.setData({
+          error_msg:'请输入正确成绩',
+          flag_color:'#dfe4ea',
+          warn_icon: 'warn',
+          box_shadow:'',
+          grade:''
+        })
+        this.openToast()
+      }else if(this.data.grade==''){
+        this.setData({
+          error_msg:'成绩不能为空',
+          warn_icon: 'warn',
+          flag_color:'#dfe4ea',
+          box_shadow:'',
+          grade:''
+        })
+        this.openToast()
+      }else if(this.data.grade==this.data.f_score[this.data.pl]){
+        wx.navigateTo({
+          url: './screening_university/screening_university?flag=0&score='+this.data.grade,
+        });
+      }else if(this.data.grade <= 0){
+        this.setData({
+          error_msg:'请输入正确成绩',
+          warn_icon: 'warn',
+          flag_color:'#dfe4ea',
+          box_shadow:'',
+          grade:''
+        })
+        this.openToast()
+      }else if(this.data.grade < 400){
+        this.setData({
+          error_msg:'未找到符合条件的学校',
+          warn_icon: 'info',
+          flag_color:'#dfe4ea',
+          box_shadow:'',
+          grade:''
+        })
+        this.openToast()
+      }else{
+        appInst.userData.score = this.data.grade
+        wx.navigateTo({
+          url: './screening_university/screening_university?flag=0&score='+this.data.grade,
+        });
+      }
+    }
+  },
+  /**
+   * 折线图页面
+  */
+  zhexiantu: function(){
+    setTimeout(()=>{
       wx.navigateTo({
-        url: './screening_university/screening_university?flag=1&score='+this.data.value,
+        url: '../line_chart/line_chart',
       });
+    },300)
+    
+  },
+  /**
+   * 查询方式选择
+  */
+  typeChoose: function(e){
+    this.setData({
+      choose_type:e.target.dataset.id
+    })
+    if(e.target.dataset.id==0){
+      this.setData({
+        color_grade: this.data.type_color[1],
+        color_locant: this.data.type_color[0]
+      })
+    }else{
+      this.setData({
+        color_grade: this.data.type_color[0],
+        color_locant: this.data.type_color[1]
+      })
     }
   },
   /**

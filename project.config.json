@@ -11,7 +11,7 @@
 	},
 	"appid": "wxbcc10b3d58d8b6c2",
 	"projectname": "WXschool",
-	"libVersion": "2.8.1",
+	"libVersion": "2.12.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",

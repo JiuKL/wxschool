@@ -17,6 +17,14 @@ Component({
     level: {
       type: Array,
       value: []
+    },
+    location:{
+      type:Number,
+      value:''
+    },
+    flag:{
+      type:Number,
+      value:0
     }
   },
 
@@ -24,6 +32,8 @@ Component({
    * 组件的初始数据
    */
   data: {
+    userScore:'',
+    userLocation:''
   },
   /**
    * 组件生命周期函数
@@ -35,7 +45,8 @@ Component({
     attached: function() {
       // 在组件实例进入页面节点树时执行a
       this.setData({
-        userScore : appInst.userData.score
+        userScore : appInst.userData.score,
+        userLocation: appInst.userData.location
       })
     },
   },

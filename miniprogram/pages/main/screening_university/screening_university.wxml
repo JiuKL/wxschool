@@ -1,11 +1,18 @@
 <view class="top">
-   <view class="title">按省份筛选学校</view>
-   <picker bindchange="pickerProvince" value="{{index}}" range="{{u_province}}">
-      <m-select name="{{u_pl}}"></m-select>
-   </picker>
+   <view class="buttom" bindtap="gochart">
+      <view class="img"><image src="cloud://msgid.6d73-msgid-1259714111/icon/zhexiantu _1.png" /></view>
+      <view class="text">图表分析</view>
+   </view>
+   <view class="choose">
+      <view class="title">按省份筛选学校</view>
+      <picker bindchange="pickerProvince" value="{{index}}" range="{{u_province}}">
+         <m-select name="{{u_pl}}"></m-select>
+      </picker>
+   </view>
+   
 </view>
 <view class="body" wx:for="{{universitys}}" wx:key="index">
-   <f-school name="{{item.name}}" wx:if="{{item.local_province==u_pl||u_pl=='全部'}}" score="{{item.grade[user_province][user_type][0].l_grade}}" level="{{item.level}}" data-id="{{item._id}}" data-index='{{index}}' bindtap="goUniversity"></f-school>
+   <f-school name="{{item.name}}" wx:if="{{item.local_province==u_pl||u_pl=='全部'}}" flag="{{flag}}"location="{{item.grade[user_province][user_type][0].l_precedence}}"score="{{item.grade[user_province][user_type][0].l_grade}}" level="{{item.level}}" data-id="{{item._id}}" data-index='{{index}}' bindtap="goUniversity"></f-school>
 </view>
 <view class="weui-loadmore" wx:if="{{loadingmore}}">
    <i class="weui-loading"></i>

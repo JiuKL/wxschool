@@ -23,7 +23,10 @@ Page({
     pics: [],//图片
     school: {},//学校信息
     s_grade: {},//学校各省分数线信息
-    s_plan: {}//计划招生信息
+    s_plan: {},//计划招生信息
+
+    flag_plan:0,
+    flag_grade:0
   },
   /**
    * 生命周期函数--监听页面加载
@@ -44,10 +47,10 @@ Page({
         that.setData({
           school: res.data[0],
           pics: [
-            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '/' + res.data[0].name + '_pic1.jpg',
-            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '/' + res.data[0].name + '_pic2.jpg',
-            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '/' + res.data[0].name + '_pic3.jpg',
-            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '/' + res.data[0].name + '_pic4.jpg'
+            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '_pic1.jpg',
+            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '_pic2.jpg',
+            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '_pic3.jpg',
+            'cloud://msgid.6d73-msgid-1259714111/show/' + res.data[0].name + '_pic4.jpg'
           ]
         })
         db.collection('s_plan').where({
@@ -60,6 +63,7 @@ Page({
               plan_type: res.data[0].plan[res.data[0].pls[0]].type[0],
               plan_year: res.data[0].plan[res.data[0].pls[0]].year[0],
               plan_batch: res.data[0].plan[res.data[0].pls[0]].batch[0],
+              flag_plan:1
             })
           },
           fail: function (res) {
@@ -74,6 +78,7 @@ Page({
               s_grade: res.data[0],//学校招生计划
               grade_pl: res.data[0].pls[0],
               grade_type: res.data[0].grade.type[0],
+              flag_grade:1
             })
 
             console.log(that.data)
@@ -89,6 +94,7 @@ Page({
       }
     })
     setTimeout(()=>{
+      console.log(that.data)
       wx.hideLoading();
     },3000)
   },
@@ -184,6 +190,22 @@ Page({
     }
   },
   /**
+   * 跳转class页面
+  */
+  goClass: function(){
+    wx.navigateTo({
+      url: '../class/class?classes='+JSON.stringify(this.data.school.open_class)
+    });
+  },
+  /**
+   * 跳转一流学科
+  */
+  goDClass: function(){
+    wx.navigateTo({
+      url: '../d_fir_class/d_fir_class?dclass='+JSON.stringify(this.data.school.D_first_class)
+    });
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
@@ -197,7 +219,7 @@ Page({
       title: '加载中',
       mask: true
     })
-    this.setData({})
+    this.onLoad({id:this.data.school._id})
     setTimeout(() => {
       wx.stopPullDownRefresh()
       wx.hideLoading();

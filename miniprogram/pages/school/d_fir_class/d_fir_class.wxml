@@ -1,31 +1,14 @@
-<!--pages/shuangyiliu/shuangyiliu.wxml-->
-<view class="shuang">
-  <view class="shuanga">
-    <text class="shuanga_1">哲学</text>
-    <text class="shuanga_2">中国语言文学</text>
-    <text class="shuanga_3">外国语言文学</text>
-  </view>
-    <view class="shuangb">
-    <text class="shuangb_1">物理学</text>
-    <text class="shuangb_2">化学</text>
-    <text class="shuangb_3">天文学</text>
-  </view>
-    <view class="shuangc">
-    <text class="shuangc_1">大气科学</text>
-    <text class="shuangc_2">地质学</text>
-    <text class="shuangc_3">生物学</text>
-  </view>
-    <view class="shuangd">
-    <text class="shuangd_1">材料科学与工程</text>
-    <text class="shuangd_2">计算机科学与技术</text>
+<view class="container">
+  <view class="weui-flex l-msg" wx:if="{{dclass.length==0}}">
+    <view class="weui-flex__item">
+      <view class="placeholder">暂无</view>
     </view>
-    <view class="shuange">
-    <text class="shuange_1">化学工程与技术</text>
-    <text class="shuange_2">矿业工程</text>
-    <text class="shuange_3">环境科学与工程</text>
   </view>
-    <view class="shuangf">
-    <text class="shuangf_1">图书情报与档案管理</text>
+  <view class="container" wx:for="{{dclass}}" wx:key="index">
+    <view class="weui-flex l-msg">
+      <view class="weui-flex__item">
+        <view class="placeholder">{{dclass[index]}}</view>
+      </view>
+    </view>
   </view>
 </view>
-

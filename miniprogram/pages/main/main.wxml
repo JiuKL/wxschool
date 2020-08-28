@@ -26,14 +26,41 @@
       </view>
    </view>
    <view class="mid">
-      <view class="mid-title">分数</view>
-      <view class="mid-score" style="border: 1rpx {{flag_color}} solid;{{box_shadow}}">
-         <input type="number" value="{{value}}" placeholder="请输入分数" placeholder-class="placeholder" bindfocus="focusFn" bindblur="blurFn" bindinput="getInput" bindconfirm="findSchools"></input>
+      <view class="mid-title">
+         <view data-id="0" bindtap="typeChoose" style="color: {{color_grade}}; border-top: 1rpx {{color_grade}} solid;border-left: 1rpx {{color_grade}} solid;border-right: 1rpx {{color_grade}} solid;">分数</view>
+         <view data-id="1" bindtap="typeChoose" style="color: {{color_locant}}; border-top: 1rpx {{color_locant}} solid;border-left: 1rpx {{color_locant}} solid;border-right: 1rpx {{color_locant}} solid;">位次</view>
+      </view>
+      <view class="mid-score" style="border: 1rpx {{flag_color}} solid;{{box_shadow}}" wx:if="{{choose_type==0}}">
+         <input type="number" value="{{value}}" placeholder="请输入分数" placeholder-class="placeholder" bindfocus="focusFn" bindblur="blurFn" bindinput="getInputScore" bindconfirm="findSchools"></input>
          <view class="icon">分</view>
+      </view>
+      <view class="mid-score" style="border: 1rpx {{flag_color}} solid;{{box_shadow}}" wx:if="{{choose_type==1}}">
+         <input type="number" value="{{value}}" placeholder="请输入位次" placeholder-class="placeholder" bindfocus="focusFn" bindblur="blurFn" bindinput="getInputLocant" bindconfirm="findSchools"></input>
+         <view class="icon">位</view>
       </view>
    </view>
    <view class="end">
       <view class="button" hover-class="b_click" bindtap="findSchools">智能筛选大学</view>
+   </view>
+</view>
+<view class="bottom">
+   <view class="bottom-box" bindtap="zhexiantu">
+      <view class="img">
+         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhexiantu.png" />
+      </view>
+      <text selectable="{{false}}" >分数线图表</text>
+   </view>
+   <view class="bottom-box" bindtap="zhexiantu">
+      <view class="img">
+         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhexiantu.png" />
+      </view>
+      <text selectable="{{false}}" >分数线图表</text>
+   </view>
+   <view class="bottom-box" bindtap="zhexiantu">
+      <view class="img">
+         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhexiantu.png" />
+      </view>
+      <text selectable="{{false}}" >分数线图表</text>
    </view>
 </view>
 <!-- 警告框 -->

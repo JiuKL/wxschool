@@ -32,7 +32,11 @@ App({
     pl:'',
     type:'',
     score:'',
+    location:'',
     nickName: '',
-    imgUrl: ''
+    imgUrl: '',
+    school_list: [],
+    school_grade_list: [],
+    school_location_list: []
   }
 })

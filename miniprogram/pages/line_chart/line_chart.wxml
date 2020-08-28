@@ -1,0 +1,7 @@
+<!--index.wxml-->
+<view class="container">
+  <ec-canvas wx:if="{{flag==0}}" id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ grade }}"></ec-canvas>
+  <ec-canvas wx:if="{{flag==1}}" id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ location }}"></ec-canvas>
+</view>
+
+

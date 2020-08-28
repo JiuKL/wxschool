@@ -37,7 +37,7 @@
           <text class="numb">{{school.shuoshidian}}</text>
         </view>
         <view class="div-main">
-          <navigator url="/pages/school/d_fir_class/d_fir_class">
+          <navigator bindtap="goDClass">
             <view class="d-class">
               <text class="title iconfont icon-left">一流学科</text>
             </view>
@@ -75,7 +75,7 @@
           </navigator>
         </view>
         <view class="div-main">
-          <navigator class="div-mian" url="/pages/school/class/class">
+          <navigator class="div-mian" bindtap="goClass">
             <view class="d-class">
               <text class="title iconfont icon-left">开设专业</text>
             </view>
@@ -113,7 +113,7 @@
           <view class="show-pic">
             <text class="title iconfont icon-left">校园风光</text>
           </view>
-          <image class="img" src="cloud://msgid.6d73-msgid-1259714111/show/{{school.name}}/{{school.name}}_pic4.jpg" />
+          <image class="img" src="cloud://msgid.6d73-msgid-1259714111/show/{{school.name}}_pic1.jpg" />
         </view>
       </view>
     </swiper-item>
@@ -152,11 +152,17 @@
           <view class="plan-top">
             <view class="plan-title">各省分数线</view>
             <view class="choose">
-              <picker bindchange="pickerProvince" value="{{index}}" range="{{s_grade.pls}}">
+              <picker wx:if="{{flag_grade==1}}" bindchange="pickerProvince" value="{{index}}" range="{{s_grade.pls}}">
                 <m-select name="{{grade_pl}}"></m-select>
               </picker>
-              <picker bindchange="pickerType" value="{{index}}" range="{{s_grade.grade.type}}">
+              <picker wx:if="{{flag_grade==1}}" bindchange="pickerType" value="{{index}}" range="{{s_grade.grade.type}}">
                 <m-select name="{{grade_type}}"></m-select>
+              </picker>
+              <picker wx:if="{{flag_grade==0}}" value="{{index}}" range="{{['-']}}">
+                <m-select name="-"></m-select>
+              </picker>
+              <picker wx:if="{{flag_grade==0}}" value="{{index}}" range="{{['-']}}">
+                <m-select name="-"></m-select>
               </picker>
             </view>
           </view>
@@ -170,11 +176,14 @@
               </view>
               <view class="tr" wx:for="{{s_grade.grade[grade_pl][grade_type]}}" wx:key="index" wx:if="{{s_grade.grade[grade_pl][grade_type].length!=0}}">
                 <view class="td">{{item.year}}</view>
-                <view class="td">{{item.l_grade}}</view>
-                <view class="td">{{item.l_precedence}}</view>
-                <view class="td">{{item.batch}}</view>
+                <view class="td" wx:if="{{item.l_grade!=0}}">{{item.l_grade}}</view>
+                <view class="td" wx:if="{{item.l_grade!=0}}">{{item.l_precedence}}</view>
+                <view class="td" wx:if="{{item.l_grade!=0}}">{{item.batch}}</view>
+                <view class="td" wx:if="{{item.l_grade==0}}">-</view>
+                <view class="td" wx:if="{{item.l_precedence==0}}">-</view>
+                <view class="td" wx:if="{{item.batch==0}}">-</view>
               </view>
-              <view class="tr" wx:if="{{s_grade.grade[grade_pl][grade_type].length==0}}">
+              <view class="tr" wx:if="{{flag_grade==0}}">
                 <view class="td">-</view>
                 <view class="td">-</view>
                 <view class="td">-</view>
@@ -220,17 +229,29 @@
           <view class="plan-top">
             <view class="plan-title">招生计划</view>
             <view class="choose">
-              <picker bindchange="pickerProvince" value="{{index}}" range="{{s_plan.pls}}">
+              <picker wx:if="{{flag_plan==1}}" bindchange="pickerProvince" value="{{index}}" range="{{s_plan.pls}}">
                 <m-select name="{{plan_pl}}"></m-select>
               </picker>
-              <picker bindchange="pickerType" value="{{index}}" range="{{s_plan.plan[plan_pl].type}}">
+              <picker wx:if="{{flag_plan==0}}" bindchange="pickerProvince" value="{{index}}" range="{{['-']}}">
+                <m-select name="-"></m-select>
+              </picker>
+              <picker wx:if="{{flag_plan==1}}" bindchange="pickerType" value="{{index}}" range="{{s_plan.plan[plan_pl].type}}">
                 <m-select name="{{plan_type}}"></m-select>
               </picker>
-              <picker bindchange="pickerYear" value="{{index}}" range="{{s_plan.plan[plan_pl].year}}">
+              <picker wx:if="{{flag_plan==0}}" value="{{index}}" range="{{['-']}}">
+                <m-select name="-"></m-select>
+              </picker>
+              <picker wx:if="{{flag_plan==1}}" bindchange="pickerYear" value="{{index}}" range="{{s_plan.plan[plan_pl].year}}">
                 <m-select name="{{plan_year}}"></m-select>
               </picker>
-              <picker bindchange="pickerBatch" value="{{index}}" range="{{s_plan.plan[plan_pl].batch}}">
+              <picker wx:if="{{flag_plan==0}}" value="{{index}}" range="{{['-']}}">
+                <m-select name="-"></m-select>
+              </picker>
+              <picker wx:if="{{flag_plan==1}}" bindchange="pickerBatch" value="{{index}}" range="{{s_plan.plan[plan_pl].batch}}">
                 <m-select name="{{plan_batch}}"></m-select>
+              </picker>
+              <picker wx:if="{{flag_plan==0}}" value="{{index}}" range="{{['-']}}">
+                <m-select name="-"></m-select>
               </picker>
             </view>
           </view>
@@ -243,10 +264,16 @@
                 <view class="th">计划招生</view>
               </view>
               <view class="tr" wx:for="{{s_plan.plan[plan_pl][plan_type][plan_batch]}}" wx:key="index">
-                <view class="td">{{item.name}}</view>
-                <view class="td">{{item.class_type}}</view>
-                <view class="td">{{item.specialty_type}}</view>
-                <view class="td">{{item.numb}}</view>
+                <view class="td" wx:if="{{flag_plan==1}}">{{item.name}}</view>
+                <view class="td" wx:if="{{flag_plan==1}}">{{item.class_type}}</view>
+                <view class="td" wx:if="{{flag_plan==1}}">{{item.specialty_type}}</view>
+                <view class="td" wx:if="{{flag_plan==1}}">{{item.numb}}</view>
+              </view>
+              <view class="tr" wx:if="{{flag_plan==0}}">
+                <view class="td" wx:if="{{flag_plan==0}}">-</view>
+                <view class="td" wx:if="{{flag_plan==0}}">-</view>
+                <view class="td" wx:if="{{flag_plan==0}}">-</view>
+                <view class="td" wx:if="{{flag_plan==0}}">-</view>
               </view>
             </view>
           </view>
@@ -255,6 +282,7 @@
     </swiper-item>
   </swiper>
 </view>
+<!-- 画廊 -->
 <view class="Page" wx:if="{{gallery}}">
   <swiper circular="{{true}}" class="swiper-main">
     <swiper-item wx:for="{{pics}}" wx:key="index">
