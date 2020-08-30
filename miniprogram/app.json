@@ -2,6 +2,8 @@
   "pages": [
     "pages/main/main",
     "pages/main/screening_university/screening_university",
+    "pages/province/province",
+    "pages/company/company",
     "pages/line_chart/line_chart",
     "pages/toplist/toplist",
     "pages/user/user",
@@ -12,7 +14,8 @@
     "pages/school/class/class",
     "pages/school/d_fir_class/d_fir_class",
     "pages/user/about/about",
-    "pages/user/function/function"
+    "pages/user/function/function",
+    "pages/salary/salary"
   ],
   "window": {
     "backgroundColor": "#2980b9",

@@ -44,23 +44,23 @@
    </view>
 </view>
 <view class="bottom">
-   <view class="bottom-box" bindtap="zhexiantu">
+   <view class="bottom-box" bindtap="goSalary">
       <view class="img">
-         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhexiantu.png" />
+         <image src="cloud://msgid.6d73-msgid-1259714111/icon/paihang.png" />
       </view>
-      <text selectable="{{false}}" >分数线图表</text>
+      <text selectable="{{false}}" >职业薪资排行</text>
    </view>
-   <view class="bottom-box" bindtap="zhexiantu">
+   <view class="bottom-box" bindtap="goProvince">
       <view class="img">
-         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhexiantu.png" />
+         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhongguo.png" />
       </view>
-      <text selectable="{{false}}" >分数线图表</text>
+      <text selectable="{{false}}" >省份基点排行</text>
    </view>
-   <view class="bottom-box" bindtap="zhexiantu">
+   <view class="bottom-box" bindtap="goCompany">
       <view class="img">
-         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhexiantu.png" />
+         <image src="cloud://msgid.6d73-msgid-1259714111/icon/qiye.png" />
       </view>
-      <text selectable="{{false}}" >分数线图表</text>
+      <text selectable="{{false}}" >企业招聘热门</text>
    </view>
 </view>
 <!-- 警告框 -->

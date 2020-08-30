@@ -13,6 +13,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    numb:0,
     flag: 0,
     score: '',
     location: '',
@@ -107,6 +108,9 @@ Page({
                 name: element.name
               }).get().then(res => {
                 if (res.data.length != 0) {
+                  that.setData({
+                    numb: 1
+                  })
                   t_universitys = t_universitys.concat(res.data)
                   t_universitys[t_universitys.length - 1]['local_province'] = element.local_province
                   t_universitys[t_universitys.length - 1]['grade'] = element.grade
@@ -158,6 +162,9 @@ Page({
                 }).get().then(res => {
                   console.log(res)
                   if (res.data.length != 0) {
+                    that.setData({
+                      numb: 1
+                    })
                     t_universitys.push(res.data[0])
                     t_universitys[t_universitys.length - 1]['local_province'] = element.local_province
                     t_universitys[t_universitys.length - 1]['grade'] = element.grade
@@ -279,6 +286,9 @@ Page({
                 name: element.name
               }).get().then(res => {
                 if (res.data.length != 0) {
+                  that.setData({
+                    numb:1
+                  })
                   t_universitys = t_universitys.concat(res.data)
                   t_universitys[t_universitys.length - 1].local_province = element.local_province
                   t_universitys[t_universitys.length - 1].grade = element.grade
@@ -327,6 +337,9 @@ Page({
                 }).get().then(res => {
                   console.log(res)
                   if (res.data.length != 0) {
+                    that.setData({
+                      numb: 1
+                    })
                     t_universitys.push(res.data[0])
                     t_universitys[t_universitys.length - 1]['local_province'] = element.local_province
                     t_universitys[t_universitys.length - 1]['grade'] = element.grade

@@ -1,0 +1,71 @@
+@keyframes warn {
+  0% {
+    transform: scale(0);
+    opacity: 0.0;
+  }
+
+  25% {
+    transform: scale(0);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: scale(0.1);
+    opacity: 0.3;
+  }
+
+  75% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.0;
+  }
+}
+
+.container {
+  position: relative;
+  width: 25rpx;
+  height: 25rpx;
+  border-radius: 50%;
+}
+
+/* 保持大小不变的小圆圈  */
+
+.dot {
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  left: 30rpx;
+  top: 29.7rpx;
+  background-color: #0984e3;
+  -webkit-border-radius: 20rpx;
+  -moz-border-radius: 20rpx;
+  border: 15rpx solid #0984e3;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* 产生动画（向外扩散变大）的圆圈  */
+
+.pulse {
+  position: absolute;
+  width: 24rpx;
+  height: 24rpx;
+  left: -16rpx;
+  top: -15rpx;
+  border: 60rpx solid #74b9ff;
+  -webkit-border-radius: 30rpx;
+  -moz-border-radius: 30rpx;
+  border-radius: 50%;
+  z-index: 1;
+  opacity: 0;
+  -webkit-animation: warn 3s ease-out;
+  -moz-animation: warn 3s ease-out;
+  animation: warn 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}

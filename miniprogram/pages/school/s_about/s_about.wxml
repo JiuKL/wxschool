@@ -7,9 +7,9 @@
       <view class="h1">{{name}}</view>
       <view class="msg" wx:for="{{article}}" wx:key="index">
          {{item}}
-         <image src="cloud://msgid.6d73-msgid-1259714111/show/{{name}}/{{name}}_pic{{index+1}}.jpg" wx:if="{{index==0}}"/>
-         <image src="cloud://msgid.6d73-msgid-1259714111/show/{{name}}/{{name}}_pic{{index+2}}.jpg" wx:if="{{index==0}}"/>
-         <image src="cloud://msgid.6d73-msgid-1259714111/show/{{name}}/{{name}}_pic{{index+2}}.jpg" wx:if="{{index > 0 && index < 3}}"/>
+         <image src="cloud://msgid.6d73-msgid-1259714111/show/{{name}}_pic{{index+1}}.jpg" wx:if="{{index==0}}"/>
+         <image src="cloud://msgid.6d73-msgid-1259714111/show/{{name}}_pic{{index+2}}.jpg" wx:if="{{index==0}}"/>
+         <image src="cloud://msgid.6d73-msgid-1259714111/show/{{name}}_pic{{index+2}}.jpg" wx:if="{{index > 0 && index < 3}}"/>
       </view>
    </view>
 </view>

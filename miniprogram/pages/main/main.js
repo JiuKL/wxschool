@@ -279,6 +279,27 @@ Page({
     
   },
   /**
+   * 省份平均分数
+  */
+  goProvince: function(){
+    wx-wx.navigateTo({
+      url: '../province/province'
+    })
+  },
+  /**
+   * 
+  */
+  goCompany:function(){
+    wx.navigateTo({
+      url: '../company/company'
+    })
+  },
+  goSalary: function(){
+    wx.navigateTo({
+      url: '../salary/salary'
+    })
+  },
+  /**
    * 查询方式选择
   */
   typeChoose: function(e){

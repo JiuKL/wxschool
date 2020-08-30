@@ -52,4 +52,20 @@ image{
 .body{
   width: 100%;
 }
+.nothing{
+  width: 100%;
+  height: 750rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #34495e;
+}
+.nothing > image{
+  width: 200rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 

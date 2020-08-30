@@ -32,18 +32,14 @@ Page({
         "理科"
       ],
       "浙江": [
-        "不分文理",
-        "文科",
-        "理科"
+        "综合"
       ],
       "重庆": [
         "文科",
         "理科"
       ],
       "上海": [
-        "不分文理（分数3+3科目）",
-        "文科",
-        "理科"
+        "综合"
       ],
       "广东": [
         "文科",
@@ -172,8 +168,13 @@ Page({
     })
   },
   userDataSub: function () {
+    if ((this.data.pl[this.data.pl_index] != '上海' || this.data.pl[this.data.pl_index] != '浙江') && (this.data.type[this.data.type_index] != '文科' || this.data.type[this.data.type_index] != '理科')){
+      appInst.userData.type = '理科'
+    }else{
+
     appInst.userData.pl = this.data.pl[this.data.pl_index]
     appInst.userData.type = this.data.type[this.data.type_index]
+    }
     console.log(appInst)
     wx.switchTab({
       url: '/pages/main/main',
@@ -211,7 +212,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    this.setData({
+      pl_index: 0,
+      type: that.data.types[that.data.pl[0]]
+    })
+    appInst.userData.pl = this.data.pl[0]
+    appInst.userData.type = this.data.type[0]
   },
 
   /**

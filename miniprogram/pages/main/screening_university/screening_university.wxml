@@ -11,13 +11,10 @@
    </view>
    
 </view>
+<view class="nothing" wx:if="{{universitys==''}}">
+  <image src="cloud://msgid.6d73-msgid-1259714111/icon/zanwushuju.png"></image>
+  <view>暂无数据</view>
+</view>
 <view class="body" wx:for="{{universitys}}" wx:key="index">
-   <f-school name="{{item.name}}" wx:if="{{item.local_province==u_pl||u_pl=='全部'}}" flag="{{flag}}"location="{{item.grade[user_province][user_type][0].l_precedence}}"score="{{item.grade[user_province][user_type][0].l_grade}}" level="{{item.level}}" data-id="{{item._id}}" data-index='{{index}}' bindtap="goUniversity"></f-school>
-</view>
-<view class="weui-loadmore" wx:if="{{loadingmore}}">
-   <i class="weui-loading"></i>
-   <text class="weui-loadmore__tips">正在加载</text>
-</view>
-<view class="weui-loadmore weui-loadmore_line" wx:if="{{clickloading}}" bindtap="loadmore">
-   <text class="weui-loadmore__tips">点击加载更多</text>
+  <f-school name="{{item.name}}" wx:if="{{item.local_province==u_pl||u_pl=='全部'}}" flag="{{flag}}"location="{{item.grade[user_province][user_type][0].l_precedence}}"score="{{item.grade[user_province][user_type][0].l_grade}}" level="{{item.level}}" data-id="{{item._id}}" data-index='{{index}}' bindtap="goUniversity"></f-school>
 </view>

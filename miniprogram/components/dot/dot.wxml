@@ -1,0 +1,4 @@
+<view class="container">
+  <view class="dot" style="background-color: {{color}};border: 15rpx solid {{color}};"></view>
+  <view class="pulse" style="border: 60rpx solid {{colorborder}};"></view>
+</view>

@@ -43,6 +43,7 @@ page{
     align-items: center;
 }
 image{
+    width: 100%;
     margin-top: 25rpx;
     box-shadow: 0 0.13rem 0.3rem rgba(0,0,0,0.12), 0.13rem 0.16rem 0.46rem rgba(0,0,0,0.12);
     border-radius: 10rpx;

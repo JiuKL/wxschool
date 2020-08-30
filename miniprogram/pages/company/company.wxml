@@ -1,0 +1,8 @@
+<!--index.wxml-->
+<view class="container">
+  <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ chart }}"></ec-canvas>
+</view>
+<view class="container">
+  <ec-canvas id="mychart-dom-move-bar" canvas-id="mychart-move-bar" ec="{{ pie }}"></ec-canvas>
+</view>
+
