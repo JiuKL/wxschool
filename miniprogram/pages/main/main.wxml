@@ -50,12 +50,6 @@
       </view>
       <text selectable="{{false}}" >职业薪资排行</text>
    </view>
-   <view class="bottom-box" bindtap="goProvince">
-      <view class="img">
-         <image src="cloud://msgid.6d73-msgid-1259714111/icon/zhongguo.png" />
-      </view>
-      <text selectable="{{false}}" >省份基点排行</text>
-   </view>
    <view class="bottom-box" bindtap="goCompany">
       <view class="img">
          <image src="cloud://msgid.6d73-msgid-1259714111/icon/qiye.png" />

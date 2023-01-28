@@ -2,7 +2,6 @@
   "pages": [
     "pages/main/main",
     "pages/main/screening_university/screening_university",
-    "pages/province/province",
     "pages/company/company",
     "pages/line_chart/line_chart",
     "pages/toplist/toplist",
